@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Urshashi Majumder - Computer Science Undergraduate specializing in backend systems, REST APIs, and AI-powered applications. Actively looking for software engineering roles.">
+  <meta name="keywords" content="Urshashi Majumder, Backend Engineer, Software Developer, Full Stack Engineer, Node.js, Express, Redis, Docker, React, MongoDB, PostgreSQL, Gemini AI">
+  <meta name="author" content="Urshashi Majumder">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Urshashi Majumder | Backend & AI Engineer">
+  <meta property="og:description" content="Computer Science undergraduate building backend microservices, REST APIs, and AI-powered applications. Passionate about scalable production systems.">
+  <meta property="og:image" content="https://urshashi09.github.io/portfolio/assets/og-image.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Urshashi Majumder | Backend & AI Engineer">
+  <meta property="twitter:description" content="Computer Science undergraduate building backend microservices, REST APIs, and AI-powered applications. Passionate about scalable production systems.">
+
+  <title>Urshashi Majumder | Backend & AI Engineer</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2364ffda%22 font-family=%22monospace%22 font-weight=%22bold%22>&lt;&gt;</text></svg>">
+</head>
+<body>
+
+  <!-- Scroll Progress Tracker -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <!-- Background Grid & Glowing Aurora Nebula -->
+  <div class="grid-overlay"></div>
+  <div class="aurora-glow aurora-glow-1"></div>
+  <div class="aurora-glow aurora-glow-2"></div>
+  <div class="aurora-glow aurora-glow-3"></div>
+
+  <!-- Header Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <span>&lt;</span>UM<span>/&gt;</span>
+      </a>
+      
+      <!-- Hamburger Icon for Mobile -->
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+        <div class="menu-btn-burger"></div>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <!-- HTML5 Canvas for Interactive Particle Connections -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <div class="container">
+      <div class="hero-wrapper">
+        <!-- <div class="tech-pill-badge reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+          Actively Looking for Software Engineering Internships / Roles
+        </div> -->
+        <span class="hero-greeting reveal reveal-delay-1">Hi, my name is</span>
+        <h1 class="hero-name text-gradient reveal reveal-delay-2">Urshashi Majumder.</h1>
+        <h2 class="hero-title reveal reveal-delay-2">I build scalable backend systems &amp; intelligent applications.</h2>
+        <p class="hero-intro reveal reveal-delay-3">
+          I'm a Computer Science undergraduate specializing in backend architecture, robust REST APIs, and AI integration. I'm passionate about writing highly optimized, clean code and designing distributed, event-driven production architectures.
+        </p>
+        <div class="hero-buttons reveal reveal-delay-3">
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="scroll-down reveal reveal-delay-3">
+        <a href="#experience" aria-label="Scroll Down to Experience">
+          <div class="scroll-down-mouse">
+            <div class="scroll-down-wheel"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Experience &amp; Education</h2>
+      
+      <div class="timeline-container">
+        
+        <!-- Timeline Item 1: IBM Intern -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Machine Learning &amp; AI Virtual Intern</h3>
+                <span class="timeline-company">IBM</span>
+              </div>
+              <span class="timeline-date">2026</span>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Designed and built a Salary Prediction system leveraging Linear Regression and Random Forest models.</li>
+                <li>Evaluated and tuned predictive models, achieving high accuracy using metrics like R² Score and Mean Absolute Error (MAE).</li>
+                <li>Technologies Used: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn.</li>
+              </ul>
+              <a href="certificates/IBM Learning - certificate.pdf" class="timeline-certificate-link">
+                Certificate PDF Link
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: TIU Education -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">B.Tech in Computer Science Engineering (AI)</h3>
+                <span class="timeline-company">Techno India University</span>
+              </div>
+              <span class="timeline-date">2023 - 2027</span>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li>Specialization in Artificial Intelligence and Machine Learning.</li>
+                <li>Current Cumulative Grade Point Average: <strong>8.7 CGPA</strong>.</li>
+                <li>Active member in engineering circles and hackathon squads. Dedicated to backend architectures and systems programming.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Technical Skills</h2>
+      
+      <div class="skills-grid">
+        
+        <!-- Languages -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">Languages</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">Backend Architecture</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">JWT Authentication</span>
+            <span class="skill-tag">Event-Driven Design</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">Databases &amp; Caching</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Sequelize ORM</span>
+            <span class="skill-tag">Mongoose ODM</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Infrastructure -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">DevOps &amp; Tools</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">CI/CD Pipelines</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Swagger API</span>
+            <span class="skill-tag">Linux CLI</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">Frontend</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">HTML5 &amp; CSS3</span>
+            <span class="skill-tag">SCSS</span>
+            <span class="skill-tag">Vite</span>
+          </div>
+        </div>
+
+        <!-- Machine Learning & AI -->
+        <div class="skills-card reveal">
+          <div class="skills-card-header">
+            <div class="skills-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="skills-card-title">ML &amp; AI Integration</h3>
+          </div>
+          <div class="skills-tag-grid">
+            <span class="skill-tag">Gemini API</span>
+            <span class="skill-tag">Groq API</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Matplotlib &amp; Seaborn</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Projects</h2>
+      
+      <div class="projects-grid">
+        
+        <!-- Project 1: Microservice Blog App -->
+        <div class="project-card reveal">
+          <div class="project-card-header">
+            <div class="project-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <!-- Github Link -->
+              <a href="https://github.com/urshashi09/Microservice-Blog-App" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <!-- Live Link -->
+              <a href="https://blog-app-frontend-qmz3.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">Microservice Blog App</h3>
+            <div class="project-description">
+              <ul>
+                <li>Architected 3 independent microservices (User, Author, Blog) using Node.js and TypeScript, operating across PostgreSQL and MongoDB databases.</li>
+                <li>Designed event-driven cache invalidation patterns via RabbitMQ messages and Redis cache-aside reads to reduce repeated heavy database hits.</li>
+                <li>Integrated 3 AI-driven writing and text-polishing tools powered by Google Gemini AI and containerized all environments with Docker.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <div class="project-tech-list">
+              <span class="project-tech-tag">Next.js</span>
+              <span class="project-tech-tag">Node.js</span>
+              <span class="project-tech-tag">RabbitMQ</span>
+              <span class="project-tech-tag">Redis</span>
+              <span class="project-tech-tag">PostgreSQL</span>
+              <span class="project-tech-tag">Docker</span>
+              <span class="project-tech-tag">Gemini AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: MealZeno -->
+        <div class="project-card reveal">
+          <div class="project-card-header">
+            <div class="project-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <!-- Github Link -->
+              <a href="https://github.com/urshashi09/MealZeno" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <!-- Live Link -->
+              <a href="https://mealzeno-1.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">MealZeno: AI Meal Planning</h3>
+            <div class="project-description">
+              <ul>
+                <li>Developed a full-stack planner encompassing recipe generation, schedules, interactive pantry manager, shopping lists, and custom user profiles.</li>
+                <li>Implemented dynamic AI fallback (Gemini 1.5 Pro to Groq Llama 3 70B) for 100% service uptime; enforced client rate limits at 5 requests/min.</li>
+                <li>Configured a normalized PostgreSQL database schema with Sequelize ORM that handles dietary constraints, allergies, and PDF shopping exports.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <div class="project-tech-list">
+              <span class="project-tech-tag">React 19</span>
+              <span class="project-tech-tag">Node.js</span>
+              <span class="project-tech-tag">PostgreSQL</span>
+              <span class="project-tech-tag">Sequelize</span>
+              <span class="project-tech-tag">Gemini API</span>
+              <span class="project-tech-tag">Groq API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Careerlens AI -->
+        <div class="project-card reveal">
+          <div class="project-card-header">
+            <div class="project-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <!-- Github Link -->
+              <a href="https://github.com/urshashi09/Careerlens-AI" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <!-- Live Link -->
+              <a href="https://careerlens-ai-frontend.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">Careerlens AI: Interview Prep</h3>
+            <div class="project-description">
+              <ul>
+                <li>Engineered an automated interview preparation app featuring PDF resume uploading, parsing (via pdf-parse), and secure JWT cookies.</li>
+                <li>Designed strict structured JSON schema outputs with Gemini models and validated schemas using Zod validation.</li>
+                <li>Created a MongoDB schema storing detailed AI performance scorecards, tailor-made Q&As, skill roadmaps, and historic records per user.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <div class="project-tech-list">
+              <span class="project-tech-tag">React 19</span>
+              <span class="project-tech-tag">Node.js</span>
+              <span class="project-tech-tag">MongoDB</span>
+              <span class="project-tech-tag">Gemini API</span>
+              <span class="project-tech-tag">Zod</span>
+              <span class="project-tech-tag">pdf-parse</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Redis Leaderboard System -->
+        <div class="project-card reveal">
+          <div class="project-card-header">
+            <div class="project-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <!-- Github Link -->
+              <a href="https://github.com/urshashi09/redis-leaderboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <!-- Live Link Not Available (Backend Only) -->
+            </div>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">Redis Leaderboard API</h3>
+            <div class="project-description">
+              <p>Built a high-performance ranking API with 9 REST endpoints using Redis database structures.</p>
+              <ul>
+                <li>Leveraged Redis sorted sets (ZSET) for O(log N) operations and HASH structures for player metadata.</li>
+                <li>Utilized pipelining to batch queries, achieving massive throughput under simulated load. Enforced rate-limiting at 30 req/min/IP.</li>
+                <li>Integrated TTL auto-expiry and containerized with Docker Compose.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <div class="project-tech-list">
+              <span class="project-tech-tag">Node.js</span>
+              <span class="project-tech-tag">Express.js</span>
+              <span class="project-tech-tag">Redis ZSET</span>
+              <span class="project-tech-tag">Docker Compose</span>
+              <span class="project-tech-tag">Load Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: PhonePe Clone Backend API -->
+        <div class="project-card reveal">
+          <div class="project-card-header">
+            <div class="project-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <!-- Github Link -->
+              <a href="https://github.com/urshashi09/Phonepe-clone-backend" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <!-- Live Link Not Available (Backend Only) -->
+            </div>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-title">PhonePe Clone Backend API</h3>
+            <div class="project-description">
+              <p>Built a fintech-style wallet backend with authentication, wallet operations, secure transfers, bill payments, and transaction history.</p>
+              <ul>
+                <li>Implemented JWT-based signup and login flows with bcrypt-secured password and MPIN hashing for protected wallet actions.</li>
+                <li>Designed wallet APIs for deposits, phone-number money transfers, bill payments, balance checks, and incoming/outgoing transaction ledgers.</li>
+                <li>Added interactive Swagger documentation for testing authenticated endpoints and exploring the complete REST API surface.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <div class="project-tech-list">
+              <span class="project-tech-tag">Node.js</span>
+              <span class="project-tech-tag">Express.js</span>
+              <span class="project-tech-tag">MongoDB</span>
+              <span class="project-tech-tag">Mongoose</span>
+              <span class="project-tech-tag">JWT</span>
+              <span class="project-tech-tag">Bcrypt</span>
+              <span class="project-tech-tag">Swagger</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Achievements</h2>
+      
+      <div class="achievements-grid">
+        
+        <!-- Achievement 1 -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm-2 4h4m-4 4h4m-4 4h4" />
+            </svg>
+          </div>
+          <h3 class="achievement-title">Finalist</h3>
+          <span class="achievement-org">Smart India Hackathon 2023</span>
+          <p class="achievement-desc">
+            Selected as a national finalist for designing and presenting an innovative project solution addressing critical socio-economic problems in India's premier nationwide hackathon.
+          </p>
+          <a href="certificates/sih.pdf" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Smart India Hackathon certificate PDF">
+            <img src="certificates/sihimage.jpeg" alt="Smart India Hackathon 2023 certificate preview">
+          </a>
+        </div>
+
+        <!-- Achievement 2 -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="achievement-title">2nd Place Winner</h3>
+          <span class="achievement-org">Plot2Deploy Hackathon 2024</span>
+          <p class="achievement-desc">
+            Awarded second place in a highly competitive, time-constrained hackathon organized by Google Developer Student Clubs (GDSC), focusing on clean code deployment and design.
+          </p>
+          <a href="certificates/1717259423582.jpg" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Plot2Deploy certificate image">
+            <img src="certificates/1717259423582.jpg" alt="Plot2Deploy Hackathon 2024 certificate preview">
+          </a>
+        </div>
+
+        <!-- Achievement 3 -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+            </svg>
+          </div>
+          <h3 class="achievement-title">5th Place Winner</h3>
+          <span class="achievement-org">Hack Horizon 2.0</span>
+          <p class="achievement-desc">
+            Earned 5th place among numerous student teams globally in Hack Horizon 2.0, hosted by Arka Jain University, showing strong execution under intense pressure.
+          </p>
+          <a href="certificates/hackhorizon.jpeg" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Hack Horizon certificate image">
+            <img src="certificates/hackhorizon.jpeg" alt="Hack Horizon 2.0 certificate preview">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Get In Touch</h2>
+      
+      <div class="contact-layout">
+        
+        <!-- Info Column -->
+        <div class="contact-info reveal">
+          <p class="contact-text">
+            I'm currently seeking internships and full-time junior developer positions! If you have a question, want to collaborate on an open-source project, or just want to chat about systems engineering, don't hesitate to reach out.
+          </p>
+          
+          <div class="contact-cards-container">
+            <!-- Email -->
+            <a href="mailto:urshashimaj@gmail.com" class="contact-detail-card">
+              <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">urshashimaj@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+917980996710" class="contact-detail-card">
+              <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">Phone</span>
+                <span class="contact-card-value">+91 7980996710</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/urshashi-majumder-2239661b9" target="_blank" rel="noopener noreferrer" class="contact-detail-card">
+              <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">linkedin.com/in/urshashi-majumder-2239661b9</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/urshashi09" target="_blank" rel="noopener noreferrer" class="contact-detail-card">
+              <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">github.com/urshashi09</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-wrapper reveal reveal-delay-1">
+          <form id="contact-form" class="contact-form" novalidate>
+            
+            <div class="form-group">
+              <input type="text" id="name" class="form-input" placeholder=" " required>
+              <label for="name" class="form-label">Full Name</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" class="form-input" placeholder=" " required>
+              <label for="email" class="form-label">Email Address</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" id="subject" class="form-input" placeholder=" " required>
+              <label for="subject" class="form-label">Subject</label>
+            </div>
+            
+            <div class="form-group">
+              <textarea id="message" class="form-input" placeholder=" " required></textarea>
+              <label for="message" class="form-label">Your Message</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
+            
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification System -->
+  <div class="toast" id="toast">
+    <div class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <span class="toast-text" id="toast-text">Message sent successfully!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p class="footer-copy">
+        &copy; 2026 Urshashi Majumder. Built with <span class="footer-heart">&hearts;</span> &amp; vanilla stack.
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/urshashi09" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/urshashi-majumder-2239661b9" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
