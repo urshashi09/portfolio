@@ -5,6 +5,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const skillsGrid = document.querySelector('.skills-grid');
+  if (skillsGrid) {
+    const skillCards = Array.from(skillsGrid.querySelectorAll('.skills-card'))
+      .sort((first, second) => Number(first.dataset.skillOrder) - Number(second.dataset.skillOrder));
+    skillsGrid.replaceChildren(...skillCards);
+  }
+
+  const projectGrid = document.querySelector('.projects-grid');
+  if (projectGrid) {
+    const projectCards = Array.from(projectGrid.querySelectorAll('.project-card'))
+      .sort((first, second) => Number(first.dataset.projectPriority) - Number(second.dataset.projectPriority));
+    projectGrid.replaceChildren(...projectCards);
+  }
+
   // ==========================================
   // 1. Navigation & Header Scroll Behavior
   // ==========================================
@@ -80,181 +94,297 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 3. Scroll Reveal Animation
+  // 3. Scroll Reveal Animation with Staggering
   // ==========================================
   const revealElements = document.querySelectorAll('.reveal');
 
   const revealObserverOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.15 // Triggers when 15% of the element is visible
+    rootMargin: '0px 0px -6% 0px',
+    threshold: 0.05
   };
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        // Unobserve once revealed to keep layout responsive
-        observer.unobserve(entry.target);
-      }
-    });
-  }, revealObserverOptions);
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger card reveals smoothly
+          setTimeout(() => {
+            entry.target.classList.remove('reveal-pending');
+            entry.target.classList.add('active');
+          }, index * 40);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealObserverOptions);
 
-  revealElements.forEach(element => {
-    revealObserver.observe(element);
-  });
+    revealElements.forEach(element => {
+      element.classList.add('reveal-pending');
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach(element => {
+      element.classList.add('active');
+    });
+  }
 
 
   // ==========================================
-  // 4. Interactive Canvas Particle Background
+  // 3b. Scroll-Triggered Tactile Box Entrance
+  // ==========================================
+  const scrollBoxes = document.querySelectorAll('.scroll-box');
+
+  const scrollBoxOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.08
+  };
+
+  if ('IntersectionObserver' in window) {
+    const boxObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, scrollBoxOptions);
+
+    scrollBoxes.forEach(box => boxObserver.observe(box));
+  } else {
+    scrollBoxes.forEach(box => box.classList.add('active'));
+  }
+
+
+  // ==========================================
+  // 4. Dynamic Retro Terminal Typewriter Effect
+  // ==========================================
+  const typewriterElement = document.getElementById('role-typewriter');
+  if (typewriterElement) {
+    const roles = [
+      'BACKEND & AI DEVELOPER',
+      'REST APIs & MICROSERVICES',
+      'EVENT-DRIVEN ARCHITECTURE',
+      'RAG & AGENTIC WORKFLOWS',
+      'DISTRIBUTED SYSTEMS BUILDER'
+    ];
+    let roleIndex = 0;
+    let charIndex = roles[0].length;
+    let isDeleting = false;
+    let typingSpeed = 65;
+
+    function typeLoop() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 30;
+      } else {
+        typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 65;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        typingSpeed = 2200; // Pause at end of title
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 400; // Brief breath before starting next title
+      }
+
+      setTimeout(typeLoop, typingSpeed);
+    }
+
+    // Start typing after initial display pause
+    setTimeout(typeLoop, 2000);
+  }
+
+
+  // ==========================================
+  // 5. Animated Number Counters
+  // ==========================================
+  const counters = document.querySelectorAll('.stat-counter');
+  if (counters.length > 0 && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseFloat(counter.getAttribute('data-target'));
+          const isDecimal = counter.getAttribute('data-decimal') === '1';
+          const duration = 1200;
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentVal = target * easeOut;
+
+            counter.textContent = isDecimal ? currentVal.toFixed(1) : Math.floor(currentVal);
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = isDecimal ? target.toFixed(1) : target;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  }
+
+
+  // ==========================================
+  // 6. Tactile 3D Tilt on Hover for Project Cards
+  // ==========================================
+  if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -3;
+        const rotateY = ((x - centerX) / centerX) * 3;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-5px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+
+  // ==========================================
+  // 7. Tactile Ambient Sparks Canvas (Hero)
   // ==========================================
   const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
   const heroSection = document.getElementById('hero');
 
-  let particlesArray = [];
-  let numberOfParticles = 70;
-  
-  // Set dimensions
-  function resizeCanvas() {
-    canvas.width = heroSection.offsetWidth;
-    canvas.height = heroSection.offsetHeight;
-  }
-  
-  resizeCanvas();
-  window.addEventListener('resize', () => {
+  if (canvas && heroSection) {
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    
+    function resizeCanvas() {
+      canvas.width = heroSection.offsetWidth;
+      canvas.height = heroSection.offsetHeight;
+    }
+    
     resizeCanvas();
-    initParticles();
-  });
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initSparks();
+    });
 
-  // Track mouse coordinates
-  let mouse = {
-    x: null,
-    y: null,
-    radius: 120
-  };
+    let mouse = {
+      x: null,
+      y: null,
+      radius: 100
+    };
 
-  heroSection.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = event.clientX - rect.left;
-    mouse.y = event.clientY - rect.top;
-  });
+    heroSection.addEventListener('mousemove', (event) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+    });
 
-  heroSection.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
+    heroSection.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
 
-  // Particle blueprint class
-  class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-      this.x = x;
-      this.y = y;
-      this.directionX = directionX;
-      this.directionY = directionY;
-      this.size = size;
-      this.color = color;
-    }
+    const sparkShapes = ['✦', '•', '+', '◆'];
+    const sparkColors = [
+      'rgba(30, 41, 59, 0.22)',   // soft slate
+      'rgba(245, 158, 11, 0.35)', // warm amber
+      'rgba(16, 185, 129, 0.28)', // fresh emerald
+      'rgba(59, 130, 246, 0.30)'  // gentle blue
+    ];
 
-    // Draw particle
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-
-    // Update particle position
-    update() {
-      // Bounce particles off borders
-      if (this.x > canvas.width || this.x < 0) {
-        this.directionX = -this.directionX;
-      }
-      if (this.y > canvas.height || this.y < 0) {
-        this.directionY = -this.directionY;
+    class Spark {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.shape = sparkShapes[Math.floor(Math.random() * sparkShapes.length)];
+        this.color = sparkColors[Math.floor(Math.random() * sparkColors.length)];
+        this.size = Math.floor(Math.random() * 6) + 8; // 8px - 14px
+        this.speedX = (Math.random() * 0.4) - 0.2;
+        this.speedY = (Math.random() * -0.5) - 0.1; // slow gentle upward drift
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() * 0.6) - 0.3;
       }
 
-      // Attract/Repel mouse interaction
-      if (mouse.x !== null && mouse.y !== null) {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx*dx + dy*dy);
-        if (distance < mouse.radius) {
-          // Pull towards mouse slightly
-          this.x += dx * 0.03;
-          this.y += dy * 0.03;
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.fillStyle = this.color;
+        ctx.font = `${this.size}px "Plus Jakarta Sans", monospace`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.shape, 0, 0);
+        ctx.restore();
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+
+        // Wrap around smoothly
+        if (this.y < -10) this.y = canvas.height + 10;
+        if (this.x < -10) this.x = canvas.width + 10;
+        if (this.x > canvas.width + 10) this.x = -10;
+
+        // Soft magnetic mouse interaction
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            const force = (1 - distance / mouse.radius) * 1.5;
+            this.x -= (dx / distance) * force;
+            this.y -= (dy / distance) * force;
+          }
         }
-      }
 
-      // Move particle
-      this.x += this.directionX;
-      this.y += this.directionY;
-
-      this.draw();
-    }
-  }
-
-  // Populate particles array
-  function initParticles() {
-    particlesArray = [];
-    numberOfParticles = Math.floor((canvas.width * canvas.height) / 13000);
-    // Boundary checks
-    if (numberOfParticles > 120) numberOfParticles = 120;
-    if (numberOfParticles < 30) numberOfParticles = 30;
-
-    for (let i = 0; i < numberOfParticles; i++) {
-      let size = (Math.random() * 2) + 1;
-      let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
-      let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-      let directionX = (Math.random() * 0.8) - 0.4;
-      let directionY = (Math.random() * 0.8) - 0.4;
-      
-      // Dual-color cosmic particle selection (violet vs cyan)
-      const isViolet = Math.random() > 0.5;
-      let color = isViolet ? 'rgba(139, 92, 246, 0.45)' : 'rgba(6, 182, 212, 0.45)';
-
-      particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-  }
-
-  // Draw connecting network lines
-  function connect() {
-    let opacityValue = 1;
-    for (let a = 0; a < particlesArray.length; a++) {
-      for (let b = a; b < particlesArray.length; b++) {
-        let dx = particlesArray[a].x - particlesArray[b].x;
-        let dy = particlesArray[a].y - particlesArray[b].y;
-        let distance = Math.sqrt(dx*dx + dy*dy);
-
-        if (distance < 110) {
-          opacityValue = 1 - (distance / 110);
-          // Connection color matches particle a's primary color channel (139 for violet, 6 for cyan)
-          const baseColor = particlesArray[a].color.includes('139') ? '139, 92, 246' : '6, 182, 212';
-          ctx.strokeStyle = `rgba(${baseColor}, ${opacityValue * 0.15})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-          ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-          ctx.stroke();
-        }
+        this.draw();
       }
     }
-  }
 
-  // Main animation frame loop
-  function animateParticles() {
-    requestAnimationFrame(animateParticles);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let i = 0; i < particlesArray.length; i++) {
-      particlesArray[i].update();
+    function initSparks() {
+      particlesArray = [];
+      const count = Math.min(Math.floor((canvas.width * canvas.height) / 16000), 40);
+      for (let i = 0; i < count; i++) {
+        particlesArray.push(new Spark());
+      }
     }
-    connect();
-  }
 
-  // Initialize and trigger particles canvas loop
-  initParticles();
-  animateParticles();
+    let animationId;
+    function animateSparks() {
+      animationId = requestAnimationFrame(animateSparks);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+    }
+
+    initSparks();
+    animateSparks();
+  }
 
 
   // ==========================================
@@ -283,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const nameInput = document.getElementById('name');
@@ -336,9 +466,56 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Simulated successful message submission
-    showToast('Thank you! Your message has been sent successfully.', true);
-    form.reset();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnContent = submitBtn ? submitBtn.innerHTML : '<span>SEND MESSAGE</span> <span>✈️</span>';
+
+    // Show sending / pending state on submit button
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>SENDING...</span> <span>⏳</span>';
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'd9aff404-848b-4a1a-8fb4-b638eea10f5f',
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          subject: subjectInput.value.trim(),
+          message: messageInput.value.trim(),
+          from_name: 'Portfolio Contact Memo',
+          botcheck: document.getElementById('botcheck')?.checked || false
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        // Confetti burst on successful submission
+        if (submitBtn) {
+          const rect = submitBtn.getBoundingClientRect();
+          spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 36);
+        }
+        showToast('Thank you! Your message has been sent successfully.', true);
+        form.reset();
+      } else {
+        const errorMsg = result.message || 'Submission failed. Please email urshashimaj@gmail.com directly.';
+        showToast(errorMsg, false);
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      showToast('Network error. Please email urshashimaj@gmail.com directly.', false);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnContent;
+      }
+    }
   });
 
   // Clear error border color when user focuses back on the fields
@@ -348,5 +525,86 @@ document.addEventListener('DOMContentLoaded', () => {
       input.style.borderColor = '';
     });
   });
+
+
+  // ==========================================
+  // 8. Tactile Scrapbook Confetti Burst
+  // ==========================================
+  function spawnConfetti(originX, originY, count = 28) {
+    const colors = ['#f59e0b', '#3b82f6', '#10b981', '#ec4899', '#8b5cf6', '#1e293b'];
+    for (let i = 0; i < count; i++) {
+      const flake = document.createElement('div');
+      flake.className = 'confetti-flake';
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      flake.style.backgroundColor = color;
+
+      const angle = (Math.random() * Math.PI * 2);
+      const distance = Math.random() * 120 + 30;
+      const tx = Math.cos(angle) * distance;
+      const ty = Math.sin(angle) * distance - 20; // slight upward burst bias
+      const rot = (Math.random() * 720) - 360;
+      const size = Math.floor(Math.random() * 6) + 6;
+
+      flake.style.width = `${size}px`;
+      flake.style.height = `${size}px`;
+      flake.style.left = `${originX}px`;
+      flake.style.top = `${originY}px`;
+      flake.style.setProperty('--tx', `${tx}px`);
+      flake.style.setProperty('--ty', `${ty}px`);
+      flake.style.setProperty('--rot', `${rot}deg`);
+
+      document.body.appendChild(flake);
+      setTimeout(() => flake.remove(), 900);
+    }
+  }
+
+
+  // ==========================================
+  // 9. Magnetic Button Hover Physics
+  // ==========================================
+  if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - (rect.left + rect.width / 2);
+        const y = e.clientY - (rect.top + rect.height / 2);
+        btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+
+  // ==========================================
+  // 10. Hand-Drawn Doodle SVG Stroke Animation
+  // ==========================================
+  const doodlePaths = document.querySelectorAll('.doodle-path');
+  if (doodlePaths.length > 0 && 'IntersectionObserver' in window) {
+    doodlePaths.forEach(path => {
+      try {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+        path.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      } catch (err) {
+        // Fallback gracefully for any unsupported SVG engines
+      }
+    });
+
+    const pathObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.strokeDashoffset = '0';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    doodlePaths.forEach(path => pathObserver.observe(path));
+  }
 
 });

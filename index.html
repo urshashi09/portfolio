@@ -1,701 +1,1203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Urshashi Majumder - Computer Science Undergraduate specializing in backend systems, REST APIs, and AI-powered applications. Actively looking for software engineering roles.">
-  <meta name="keywords" content="Urshashi Majumder, Backend Engineer, Software Developer, Full Stack Engineer, Node.js, Express, Redis, Docker, React, MongoDB, PostgreSQL, Gemini AI">
-  <meta name="author" content="Urshashi Majumder">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Urshashi Majumder | Backend & AI Engineer">
-  <meta property="og:description" content="Computer Science undergraduate building backend microservices, REST APIs, and AI-powered applications. Passionate about scalable production systems.">
-  <meta property="og:image" content="https://urshashi09.github.io/portfolio/assets/og-image.png">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Urshashi Majumder | Backend & AI Engineer">
-  <meta property="twitter:description" content="Computer Science undergraduate building backend microservices, REST APIs, and AI-powered applications. Passionate about scalable production systems.">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Urshashi Majumder - Final-year Computer Science Engineering (AI) student specializing in backend systems, distributed architectures, REST APIs, and intelligent AI applications."/>
+  <meta name="keywords" content="Urshashi Majumder, Backend Engineer, Software Developer, AI Engineer, Node.js, Express, Redis, RabbitMQ, Docker, PostgreSQL, MongoDB, LangChain, LangGraph, RAG"/>
+  <meta name="author" content="Urshashi Majumder"/>
 
-  <title>Urshashi Majumder | Backend & AI Engineer</title>
-  
-  <link rel="stylesheet" href="style.css">
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Urshashi Majumder | Backend &amp; AI Engineer"/>
+  <meta property="og:description" content="Final-year Computer Science (AI) student building backend microservices, distributed architectures, and agentic AI systems."/>
+
+  <title>Urshashi Majumder | Backend &amp; AI Engineer</title>
+
+  <!-- Google Fonts: Silkscreen (Pixel), Caveat & Kalam (Handwritten), Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@300;400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            pixel: ['"Silkscreen"', 'monospace'],
+            hand: ['"Caveat"', 'cursive'],
+            doodle: ['"Kalam"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            paper: '#faf8f5',
+            notebookLine: '#e2dfd2',
+            marginRed: '#fca5a5',
+            pencil: '#1e293b',
+            folderDark: '#121316',
+            folderBlue: '#2563eb',
+            folderYellow: '#f59e0b',
+            folderGreen: '#059669',
+            folderPurple: '#7c3aed',
+          },
+          boxShadow: {
+            'brutal': '4px 4px 0px 0px #18181b',
+            'brutal-sm': '2px 2px 0px 0px #18181b',
+            'brutal-lg': '6px 6px 0px 0px #18181b',
+            'polaroid': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles: Notebook Lined Background, Ruled Margins & Washi Tape -->
+  <link rel="stylesheet" href="style.css"/>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2364ffda%22 font-family=%22monospace%22 font-weight=%22bold%22>&lt;&gt;</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%232563eb%22 font-family=%22monospace%22 font-weight=%22bold%22>&lt;&gt;</text></svg>"/>
 </head>
-<body>
+<body class="notebook-bg text-slate-800 antialiased font-sans selection:bg-amber-200 selection:text-slate-900 min-h-screen py-4 sm:py-8 px-2 sm:px-6">
 
   <!-- Scroll Progress Tracker -->
   <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-  <!-- Background Grid & Glowing Aurora Nebula -->
-  <div class="grid-overlay"></div>
-  <div class="aurora-glow aurora-glow-1"></div>
-  <div class="aurora-glow aurora-glow-2"></div>
-  <div class="aurora-glow aurora-glow-3"></div>
+  <!-- Main Scrapbook Page Container -->
+  <div class="max-w-5xl mx-auto notebook-sheet rounded-2xl border border-stone-300 overflow-hidden relative shadow-2xl pb-16">
 
-  <!-- Header Navigation -->
-  <header id="header">
-    <div class="container nav-container">
-      <a href="#hero" class="logo">
-        <span>&lt;</span>UM<span>/&gt;</span>
-      </a>
-      
-      <!-- Hamburger Icon for Mobile -->
-      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
-        <div class="menu-btn-burger"></div>
-      </button>
-
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero">
-    <!-- HTML5 Canvas for Interactive Particle Connections -->
-    <canvas id="particles-canvas"></canvas>
-    
-    <div class="container">
-      <div class="hero-wrapper">
-        <!-- <div class="tech-pill-badge reveal">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
-          Actively Looking for Software Engineering Internships / Roles
-        </div> -->
-        <span class="hero-greeting reveal reveal-delay-1">Hi, my name is</span>
-        <h1 class="hero-name text-gradient reveal reveal-delay-2">Urshashi Majumder.</h1>
-        <h2 class="hero-title reveal reveal-delay-2">I build scalable backend systems &amp; intelligent applications.</h2>
-        <p class="hero-intro reveal reveal-delay-3">
-          I'm a Computer Science undergraduate specializing in backend architecture, robust REST APIs, and AI integration. I'm passionate about writing highly optimized, clean code and designing distributed, event-driven production architectures.
-        </p>
-        <div class="hero-buttons reveal reveal-delay-3">
-          <a href="#projects" class="btn btn-primary">
-            Explore My Work
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-      </div>
-      <div class="scroll-down reveal reveal-delay-3">
-        <a href="#experience" aria-label="Scroll Down to Experience">
-          <div class="scroll-down-mouse">
-            <div class="scroll-down-wheel"></div>
-          </div>
+    <!-- BEGIN: Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#faf8f5]/95 backdrop-blur-md border-b-2 border-slate-900/10 px-3 sm:px-8 py-3" id="header">
+      <div class="flex items-center justify-between gap-2 sm:gap-4">
+        <!-- Left: Logo / Monogram -->
+        <a aria-label="Urshashi Majumder Home" class="flex items-center gap-2 group shrink-0" href="#hero">
+          <span class="w-8 h-8 rounded-full bg-rose-500 text-white font-pixel flex items-center justify-center text-xs font-bold shadow-brutal-sm group-hover:rotate-6 transition-transform">
+            UM
+          </span>
+          <span class="font-pixel text-xs tracking-tight text-slate-800 hidden sm:inline-block">
+            &lt;UM/&gt;
+          </span>
         </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Experience & Education Section -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Experience &amp; Education</h2>
-      
-      <div class="timeline-container">
-        
-        <!-- Timeline Item 1: IBM Intern -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
+        <!-- Center: Scrapbook Navigation Pills (Desktop & Tablet) -->
+        <nav aria-label="Main Navigation" class="flex items-center text-xs font-semibold">
+          <div class="hidden md:flex items-center gap-1 sm:gap-1.5 lg:gap-2" id="nav-links">
+            <a class="nav-link px-2.5 py-1 rounded-md bg-amber-300 text-slate-900 border border-slate-900 shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all active" href="#hero">
+              ★ HOME
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#about">
+              👤 ABOUT
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#experience">
+              💼 EXPERIENCE
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#skills">
+              ⚡ SKILLS
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#projects">
+              🗂️ PROJECTS
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#achievements">
+              🏆 ACHIEVEMENTS
+            </a>
+            <a class="nav-link px-2.5 py-1 rounded-md bg-white text-slate-800 border border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-all" href="#contact">
+              ♥ CONTACT
+            </a>
+          </div>
+        </nav>
+
+        <!-- Right: Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+            <div class="menu-btn-burger"></div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- END: Top Navigation Bar -->
+
+    <!-- Quick Social Links (Below Navbar, towards the right) -->
+    <div class="flex items-center justify-center sm:justify-end gap-2.5 px-6 sm:px-12 pt-4 pb-1 relative z-20">
+      <!-- LinkedIn Button -->
+      <a class="magnetic-btn inline-flex items-center gap-1.5 h-8 px-3 rounded-md bg-amber-400 border-2 border-slate-900 text-slate-950 font-pixel text-xs font-bold shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all" 
+         href="https://linkedin.com/in/urshashi-majumder-2239661b9" 
+         rel="noopener noreferrer" 
+         target="_blank" 
+         title="LinkedIn: urshashi-majumder-2239661b9">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span>LINKEDIN ↗</span>
+      </a>
+
+      <!-- GitHub Button -->
+      <a class="magnetic-btn inline-flex items-center gap-1.5 h-8 px-3 rounded-md bg-emerald-400 border-2 border-slate-900 text-slate-950 font-pixel text-xs font-bold shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all" 
+         href="https://github.com/urshashi09" 
+         rel="noopener noreferrer" 
+         target="_blank" 
+         title="GitHub: github.com/urshashi09">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        <span>GITHUB ↗</span>
+      </a>
+    </div>
+
+    <!-- BEGIN: Hero Section -->
+    <section class="pt-8 pb-14 px-6 sm:px-16 relative overflow-hidden" id="hero">
+      <!-- Ambient Interactive Sparks / Dust Canvas -->
+      <canvas id="particles-canvas" class="absolute inset-0 pointer-events-none w-full h-full z-0 opacity-60"></canvas>
+
+      <div class="relative z-10">
+        <!-- Handwritten Top Doodles -->
+        <div class="flex justify-between items-center max-w-xl mx-auto text-center mb-4">
+          <span class="inline-block px-3 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-400 rounded-full font-pixel text-[10px] uppercase tracking-wider transform -rotate-2 hover:rotate-0 transition-transform">
+            APIs &amp; MICROSERVICES
+          </span>
+          <div class="relative">
+            <span class="font-hand text-2xl text-slate-600 block -rotate-3">my name is</span>
+            <svg class="w-16 h-3 text-slate-400 mx-auto -mt-1" fill="none" stroke="currentColor" viewBox="0 0 65 12">
+              <path class="doodle-path" d="M2 9C20 3 45 3 63 9" stroke-linecap="round" stroke-width="2"></path>
+            </svg>
+          </div>
+          <span class="inline-block px-3 py-0.5 bg-amber-100 text-amber-900 border border-amber-400 rounded-full font-pixel text-[10px] uppercase tracking-wider transform rotate-3 hover:rotate-0 transition-transform">
+            RAG &amp; AGENTIC SYSTEMS
+          </span>
+        </div>
+
+        <!-- Retro Pixel Name Box -->
+        <div class="max-w-lg mx-auto relative my-6">
+          <!-- Top decorative doodle arrow & label with gentle float -->
+          <div class="absolute -top-7 left-2 sm:-left-6 flex items-center gap-1 animate-float-gentle">
+            <span class="font-hand text-lg text-amber-700 font-bold">that's me!</span>
+            <span class="text-amber-600 text-xl font-hand">↳</span>
+          </div>
+
+          <!-- Orange Hand-drawn Outer Frame -->
+          <div class="doodle-box-orange p-4 sm:p-6 bg-white/85 backdrop-blur-sm shadow-brutal text-center relative transition-transform hover:-translate-y-0.5">
+            <!-- Pixel Big Name -->
+            <h1 class="font-pixel text-4xl sm:text-6xl tracking-tight text-slate-900 uppercase select-none">
+              URSHASHI
+            </h1>
+            <!-- Dynamic Retro Typewriter Subtitle -->
+            <div class="text-[11px] font-pixel tracking-widest text-slate-600 mt-1 min-h-[1.5em] flex items-center justify-center">
+              <span>MAJUMDER // </span>
+              <span id="role-typewriter" class="text-blue-600 font-bold ml-1">BACKEND &amp; AI DEVELOPER</span>
+              <span class="typewriter-cursor text-blue-600 font-bold ml-0.5">_</span>
+            </div>
+          </div>
+
+          <!-- Sticky Floating Note: Education & CGPA Tag with Floating Physics -->
+          <div class="absolute -bottom-4 -left-3 sm:-left-8 bg-amber-300 border-2 border-slate-900 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-hand font-bold text-slate-900 shadow-brutal-sm -rotate-6 animate-float-note cursor-default">
+            B.Tech CSE (AI) • <span class="stat-counter" data-target="8.7" data-decimal="1">8.7</span> CGPA 🎓
+          </div>
+          <!-- Sticky Floating Note: Location Tag with Reverse Floating Physics -->
+          <div class="absolute -bottom-4 -right-2 sm:-right-8 bg-emerald-200 border-2 border-slate-900 px-3 py-1 text-xs font-hand font-bold text-emerald-950 shadow-brutal-sm rotate-3 animate-float-note-reverse cursor-default">
+            Kolkata, India 🇮🇳
+          </div>
+        </div>
+
+        <!-- Status Indicator Pill -->
+        <div class="text-center mt-8 mb-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-slate-300 rounded-full text-xs font-pixel text-slate-700 shadow-sm hover:border-slate-800 transition-colors">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+            <span>OPEN TO BACKEND, SOFTWARE ENGINEERING &amp; AI/GENAI ROLES</span>
+          </div>
+        </div>
+
+        <!-- Main Tagline with Icons -->
+        <div class="text-center max-w-2xl mx-auto mt-4 mb-8">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight">
+            I build reliable backend systems <span class="inline-block text-emerald-600 align-middle">🎯</span><br class="hidden sm:inline"/> 
+            &amp; intelligent AI applications. <span class="inline-block text-pink-500 align-middle">🌸</span>
+          </h2>
+          <p class="mt-4 text-slate-600 text-sm sm:text-base font-normal max-w-xl mx-auto leading-relaxed">
+            Final-year Computer Science (AI) student building backend systems, distributed services, and practical AI/agentic workflows.
+          </p>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex items-center justify-center gap-4">
+          <a class="magnetic-btn inline-flex items-center gap-2 px-6 py-2.5 bg-slate-950 text-white font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all" href="#contact">
+            <span class="w-2 h-2 bg-blue-400"></span>
+            CONTACT ME
+          </a>
+          <a class="magnetic-btn inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 font-pixel text-xs rounded border-2 border-slate-900 shadow-brutal-sm hover:bg-slate-100 hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all" href="#projects">
+            EXPLORE WORK ↗
+          </a>
+        </div>
+
+        <!-- Small Polaroid Peek in Hero (Right Corner Doodled) -->
+        <div class="hidden lg:block absolute right-8 top-28 w-28 bg-white p-2 border border-stone-300 shadow-polaroid rotate-6">
+          <div class="w-full h-24 overflow-hidden rounded bg-stone-100">
+            <img alt="Urshashi Majumder portrait thumbnail" class="w-full h-full object-cover" src="certificates/down.jpg"/>
+          </div>
+          <p class="font-hand text-center text-xs text-slate-600 mt-1">urshashi :)</p>
+        </div>
+
+        <!-- Left Corner Doodled Avatar Badge -->
+        <div class="hidden lg:block absolute left-12 top-28">
+          <div class="w-12 h-12 rounded-full border-2 border-rose-400 p-0.5 bg-white shadow-brutal-sm -rotate-12 hover:rotate-0 transition-transform">
+            <img alt="Urshashi avatar" class="w-full h-full object-cover rounded-full" src="certificates/storelist.jpg"/>
+          </div>
+          <span class="font-hand text-xs text-rose-500 block -rotate-6 mt-1 font-bold">hi there! 👋</span>
+        </div>
+      </div>
+    </section>
+    <!-- END: Hero Section -->
+
+    <!-- Separator Doodle Line -->
+    <div class="px-8 my-2 flex items-center justify-center opacity-40">
+      <svg class="w-full max-w-2xl h-3" fill="none" viewBox="0 0 600 10" xmlns="http://www.w3.org/2000/svg">
+        <path class="doodle-path" d="M0 5 Q 150 0, 300 5 T 600 5" stroke="#475569" stroke-dasharray="6 6" stroke-width="1.5"></path>
+      </svg>
+    </div>
+
+    <!-- BEGIN: About Section -->
+    <section class="py-12 px-6 sm:px-14 relative reveal" id="about">
+      <!-- Handwritten Section Marker -->
+      <div class="text-left mb-6">
+        <span class="font-hand text-2xl text-slate-600 block -rotate-2">about me! ✍️</span>
+      </div>
+
+      <!-- Centered Pill Header -->
+      <div class="text-center mb-8">
+        <div class="inline-block border-2 border-slate-900 bg-white px-5 py-1 text-sm font-pixel text-slate-900 uppercase tracking-widest shadow-brutal-sm">
+          WHAT'S UP
+        </div>
+      </div>
+
+      <!-- About Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Left: Primary Polaroid Card with Real Image (certificates/me.jpeg) and Washi Tape -->
+        <div class="md:col-span-4 flex justify-center">
+          <div class="scroll-box from-left relative w-64 sm:w-72 bg-white p-3.5 pt-4 pb-6 rounded-sm shadow-xl border border-stone-200 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+            <!-- Blue Semi-Transparent Washi Tape on top left -->
+            <div class="absolute -top-3.5 left-6 w-24 h-7 washi-tape-blue -rotate-6 z-20"></div>
+            <!-- Yellow Washi Tape on top right -->
+            <div class="absolute -top-3 right-6 w-20 h-7 washi-tape-yellow rotate-6 z-20"></div>
+
+            <!-- Polaroid Photo Container using certificates/me.jpeg -->
+            <div class="w-full aspect-[4/5] bg-stone-900 overflow-hidden rounded-sm relative border border-stone-200">
+              <img alt="Portrait photograph of Urshashi Majumder" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" src="certificates/me2.jpeg"/>
+            </div>
+
+            <!-- Polaroid Bottom Handwritten Caption -->
+            <div class="mt-3 flex items-center justify-between px-1">
+              <span class="font-hand text-lg text-slate-700 font-bold">Urshashi Majumder</span>
+              <span class="font-pixel text-[9px] text-slate-400">DEVELOPER</span>
+            </div>
+
+            <!-- Small taped paperclip / note -->
+            <div class="absolute -bottom-3 -right-3 bg-amber-100 border border-amber-300 text-amber-900 font-hand text-xs px-2 py-0.5 rounded shadow-sm rotate-6">
+              coffee + code ☕
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: Handwritten & Clean Bio Text with Colorful Skill Pills -->
+        <div class="md:col-span-8 space-y-6">
+          <!-- Casual Handwritten & Structured Paragraph -->
+          <div class="scroll-box from-right bg-white/80 border border-stone-300 rounded-xl p-6 shadow-sm backdrop-blur-sm relative">
+            <div class="absolute -top-3 right-6 text-xl">📌</div>
+            <p class="font-doodle text-slate-800 text-lg sm:text-xl leading-relaxed">
+              I'm a Computer Science (AI) student focused on building reliable backend systems, clean APIs, and practical AI workflows. I enjoy working with distributed services, event-driven architectures, and agentic systems, with a focus on making applications scalable, observable, and dependable.
+            </p>
+            <p class="mt-4 text-xs sm:text-sm text-slate-600 font-sans leading-relaxed">
+              Currently pursuing B.Tech in Computer Science Engineering (Artificial Intelligence) at Techno India University, with an <strong>8.7 CGPA</strong> (2023–2027). <br> My work focuses on event-driven microservices, Redis-based caching, RabbitMQ messaging, and RAG/agentic workflows using LangChain, LangGraph, and vector databases.
+            </p>
+          </div>
+
+          <!-- Playful Pastel Skill Badges -->
+          <div class="scroll-box from-right stagger-delay-2 space-y-2.5">
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-300 text-slate-900 font-bold text-xs sm:text-sm border border-slate-900 shadow-brutal-sm hover:-translate-y-0.5 transition-transform">
+                <span>Distributed Systems</span>
+                <span class="w-5 h-5 bg-amber-400 rounded-full flex items-center justify-center text-xs">⚡</span>
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm border border-slate-900 shadow-brutal-sm hover:-translate-y-0.5 transition-transform">
+                <span>Agentic AI &amp; LangGraph</span>
+                <span class="w-5 h-5 bg-emerald-300 rounded-full flex items-center justify-center text-xs">🤖</span>
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-300 text-slate-900 font-bold text-xs sm:text-sm border border-slate-900 shadow-brutal-sm hover:-translate-y-0.5 transition-transform">
+                <span>Vector DBs &amp; RAG</span>
+                <span class="w-5 h-5 bg-purple-200 rounded-full flex items-center justify-center text-xs">🔍</span>
+              </span>
+            </div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-rose-400 text-slate-950 font-bold text-xs sm:text-sm border border-slate-900 shadow-brutal-sm hover:-translate-y-0.5 transition-transform">
+                <span>REST APIs &amp; Microservices</span>
+                <span class="w-5 h-5 bg-rose-300 rounded-full flex items-center justify-center text-xs">🔌</span>
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-500 text-white font-bold text-xs sm:text-sm border border-slate-900 shadow-brutal-sm hover:-translate-y-0.5 transition-transform">
+                <span>Docker &amp; Cloud</span>
+                <span class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-xs">📦</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-teal-200 text-slate-900 font-bold text-xs border border-slate-900 shadow-brutal-sm">
+                <span>RabbitMQ &amp; Redis</span>
+                <span>👀</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: About Section -->
+
+    <!-- BEGIN: Experience & Education Section -->
+    <section class="py-10 px-6 sm:px-14 reveal" id="experience">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-pixel text-xs bg-slate-900 text-white px-2 py-1">TIMELINE</span>
+        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Experience &amp; Education</h3>
+      </div>
+
+      <!-- Notebook Grid Cards for Experience -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Experience Card: IBM Virtual Intern -->
+        <div class="scroll-box from-left bg-white border-2 border-slate-900 p-5 rounded-lg shadow-brutal relative flex flex-col justify-between">
+          <!-- Washi tape at corner -->
+          <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-pink rotate-3"></div>
+          <div>
+            <div class="flex justify-between items-start mb-2">
               <div>
-                <h3 class="timeline-role">Machine Learning &amp; AI Virtual Intern</h3>
-                <span class="timeline-company">IBM</span>
+                <span class="text-xs font-pixel text-blue-600 uppercase">IBM SkillsBuild</span>
+                <h4 class="text-base font-bold text-slate-900">Machine Learning &amp; AI Virtual Intern</h4>
               </div>
-              <span class="timeline-date">2026</span>
+              <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded text-slate-700">Dec 2025 – Jan 2026</span>
             </div>
-            <div class="timeline-body">
-              <ul>
-                <li>Designed and built a Salary Prediction system leveraging Linear Regression and Random Forest models.</li>
-                <li>Evaluated and tuned predictive models, achieving high accuracy using metrics like R² Score and Mean Absolute Error (MAE).</li>
-                <li>Technologies Used: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn.</li>
-              </ul>
-              <a href="certificates/ibm.pdf" class="timeline-certificate-link">
-                Certificate PDF Link
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside mt-3 font-sans leading-relaxed">
+              <li>Built and evaluated a salary prediction pipeline using Linear Regression and Random Forest regressors.</li>
+              <li>Evaluated model performance using R² Score and Mean Absolute Error (MAE).</li>
+              <li>Tech: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="font-hand text-slate-500 font-bold">Verified Credential</span>
+            <a href="certificates/ibm.pdf" target="_blank" rel="noopener noreferrer" class="font-pixel text-blue-600 text-[10px] hover:underline flex items-center gap-1 font-semibold">
+              CERTIFICATE PDF LINK ↗
+            </a>
           </div>
         </div>
 
-        <!-- Timeline Item 2: TIU Education -->
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="timeline-header">
+        <!-- Education Card: Techno India University -->
+        <div class="scroll-box from-right stagger-delay-2 bg-white border-2 border-slate-900 p-5 rounded-lg shadow-brutal relative flex flex-col justify-between">
+          <!-- Washi tape at corner -->
+          <div class="absolute -top-2.5 left-6 w-16 h-5 washi-tape-yellow -rotate-3"></div>
+          <div>
+            <div class="flex justify-between items-start mb-2">
               <div>
-                <h3 class="timeline-role">B.Tech in Computer Science Engineering (AI)</h3>
-                <span class="timeline-company">Techno India University</span>
+                <span class="text-xs font-pixel text-emerald-600 uppercase">Techno India University</span>
+                <h4 class="text-base font-bold text-slate-900">B.Tech in Computer Science Engineering (AI)</h4>
               </div>
-              <span class="timeline-date">2023 - 2027</span>
+              <span class="font-pixel text-[10px] bg-emerald-50 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded font-semibold">2023 – 2027</span>
             </div>
-            <div class="timeline-body">
-              <ul>
-                <li>Specialization in Artificial Intelligence and Machine Learning.</li>
-                <li>Current Cumulative Grade Point Average: <strong>8.7 CGPA</strong>.</li>
-                <li>Active member in engineering circles and hackathon squads. Dedicated to backend architectures and systems programming.</li>
-              </ul>
-            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside mt-3 font-sans leading-relaxed">
+              <li>Specialization in Artificial Intelligence and Machine Learning.</li>
+              <li>Current Cumulative Grade Point Average: <strong class="text-slate-900"><span class="stat-counter" data-target="8.7" data-decimal="1">8.7</span> CGPA</strong>.</li>
+              
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="font-hand text-slate-500 font-bold">Academic Honors</span>
+            <span class="font-pixel text-emerald-700 text-[10px] font-semibold">CGPA: <span class="stat-counter" data-target="8.7" data-decimal="1">8.7</span> ★</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: Experience & Education Section -->
+
+    <!-- BEGIN: Technical Toolbox Section -->
+    <section class="py-10 px-6 sm:px-14 reveal" id="skills">
+      <!-- Section Header -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+        <div>
+          <span class="font-hand text-xl text-slate-500 block">inventory &amp; stack</span>
+          <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Technical Skills</h3>
+        </div>
+        <span class="font-pixel text-[10px] bg-amber-200 border border-slate-900 px-2.5 py-1 shadow-brutal-sm">
+          // PRODUCTION READY
+        </span>
+      </div>
+
+      <!-- Sticky Notes Grid -->
+      <div class="skills-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Card 1: Languages (data-skill-order="1") -->
+        <div class="skills-card scroll-box stagger-delay-1 bg-amber-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-amber-300 border border-slate-900 flex items-center justify-center text-xs font-mono">&lt;/&gt;</span>
+            <h4 class="font-pixel text-xs text-slate-900">LANGUAGES</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">C++</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">JavaScript</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">TypeScript</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Python</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Java</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">SQL</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Backend & Systems (data-skill-order="2") -->
+        <div class="skills-card scroll-box stagger-delay-2 bg-blue-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="2">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-blue-300 border border-slate-900 flex items-center justify-center text-xs">⚡</span>
+            <h4 class="font-pixel text-xs text-slate-900">BACKEND &amp; SYSTEMS</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Node.js</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Express.js</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">REST APIs</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Microservices</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">JWT Authentication</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Event-Driven Architecture</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">RabbitMQ</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Databases & Caching (data-skill-order="3") -->
+        <div class="skills-card scroll-box stagger-delay-3 bg-emerald-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="3">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-emerald-300 border border-slate-900 flex items-center justify-center text-xs">🗄️</span>
+            <h4 class="font-pixel text-xs text-slate-900">DATABASES &amp; CACHING</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">MongoDB</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">PostgreSQL</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">MySQL</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Redis</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Mongoose</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Sequelize</span>
+          </div>
+        </div>
+
+        <!-- Card 4: AI & GenAI (data-skill-order="4") -->
+        <div class="skills-card scroll-box stagger-delay-4 bg-purple-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="4">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-purple-300 border border-slate-900 flex items-center justify-center text-xs">🤖</span>
+            <h4 class="font-pixel text-xs text-slate-900">AI / GENAI</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">LLMs</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Generative AI</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Agentic AI</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">RAG</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Prompt Engineering</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Tool Calling</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Multi-Agent Systems</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Embeddings</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Vector Search</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Guardrails</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">LLM Evaluation</span>
+          </div>
+        </div>
+
+        <!-- Card 5: AI Tools & Frameworks (data-skill-order="5") -->
+        <div class="skills-card scroll-box stagger-delay-5 bg-teal-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="5">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-teal-300 border border-slate-900 flex items-center justify-center text-xs">🛠️</span>
+            <h4 class="font-pixel text-xs text-slate-900">AI FRAMEWORKS &amp; PLATFORMS</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">LangChain</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">LangGraph</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">LangSmith</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">OpenEvals</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Portkey</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Qdrant</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Jina Embeddings</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Tavily</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Gemini API</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Groq API</span>
+          </div>
+        </div>
+
+        <!-- Card 6: DevOps & Tools (data-skill-order="6") -->
+        <div class="skills-card scroll-box stagger-delay-6 bg-rose-50/90 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-rose-300 border border-slate-900 flex items-center justify-center text-xs">🐳</span>
+            <h4 class="font-pixel text-xs text-slate-900">DEVOPS &amp; CLOUD</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Docker</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Git</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">GitHub</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">AWS</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">GitHub Actions</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">CI/CD</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Postman</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Swagger/OpenAPI</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Linux CLI</span>
+          </div>
+        </div>
+
+        <!-- Card 7: Supporting Frontend (data-skill-order="7") -->
+        <div class="skills-card scroll-box stagger-delay-7 bg-stone-50 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="7">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-stone-300 border border-slate-900 flex items-center justify-center text-xs">💻</span>
+            <h4 class="font-pixel text-xs text-slate-900">FRONTEND</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">React.js</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Next.js</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Tailwind CSS</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">HTML5/CSS3</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">SCSS</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Vite</span>
+          </div>
+        </div>
+
+        <!-- Card 8: ML & Data (data-skill-order="8") -->
+        <div class="skills-card scroll-box stagger-delay-8 bg-amber-50/70 border-2 border-slate-900 p-4 rounded-xl shadow-brutal-sm relative" data-skill-order="8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-6 h-6 rounded bg-amber-300 border border-slate-900 flex items-center justify-center text-xs">📊</span>
+            <h4 class="font-pixel text-xs text-slate-900">ML &amp; DATA</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Scikit-learn</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Pandas</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">NumPy</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Matplotlib</span>
+            <span class="px-2 py-1 bg-white border border-slate-300 text-xs font-semibold rounded shadow-xs">Seaborn</span>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- END: Technical Toolbox Section -->
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Technical Skills</h2>
-      
-      <div class="skills-grid">
-        
-        <!-- Languages -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">Languages</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">Backend Architecture</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express.js</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Microservices</span>
-            <span class="skill-tag">JWT Authentication</span>
-            <span class="skill-tag">Event-Driven Design</span>
-          </div>
-        </div>
-
-        <!-- Databases -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">Databases &amp; Caching</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Redis</span>
-            <span class="skill-tag">Sequelize ORM</span>
-            <span class="skill-tag">Mongoose ODM</span>
-          </div>
-        </div>
-
-        <!-- DevOps & Infrastructure -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">DevOps &amp; Tools</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">RabbitMQ</span>
-            <span class="skill-tag">Git &amp; GitHub</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">CI/CD Pipelines</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">Swagger API</span>
-            <span class="skill-tag">Linux CLI</span>
-          </div>
-        </div>
-
-        <!-- Frontend -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">Frontend</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">Tailwind CSS</span>
-            <span class="skill-tag">HTML5 &amp; CSS3</span>
-            <span class="skill-tag">SCSS</span>
-            <span class="skill-tag">Vite</span>
-          </div>
-        </div>
-
-        <!-- Machine Learning & AI -->
-        <div class="skills-card reveal">
-          <div class="skills-card-header">
-            <div class="skills-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 class="skills-card-title">ML &amp; AI Integration</h3>
-          </div>
-          <div class="skills-tag-grid">
-            <span class="skill-tag">Gemini API</span>
-            <span class="skill-tag">Groq API</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Matplotlib &amp; Seaborn</span>
-          </div>
-        </div>
-
+    <!-- BEGIN: Stepped Folder Projects Section (2-Column Desktop Grid) -->
+    <section class="py-12 px-4 sm:px-12 reveal" id="projects">
+      <!-- Section Header -->
+      <div class="mb-8 text-center sm:text-left">
+        <span class="font-hand text-xl text-slate-500">hand-crafted &amp; deployed</span>
+        <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Projects</h3>
+        <p class="text-xs text-slate-500 font-pixel mt-1"><span class="stat-counter font-bold text-slate-800" data-target="8" data-decimal="0">8</span> ENGINEERING PROJECTS &bull; BACKEND, AI & DISTRIBUTED SYSTEMS</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
-      
-      <div class="projects-grid">
-        
-        <!-- Project 1: Microservice Blog App -->
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-            </div>
-            <div class="project-links">
-              <!-- Github Link -->
-              <a href="https://github.com/urshashi09/Microservice-Blog-App" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-              <!-- Live Link -->
-              <a href="https://blog-app-frontend-qmz3.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-card-content">
-            <h3 class="project-title">Microservice Blog App</h3>
-            <div class="project-description">
-              <ul>
-                <li>Architected 3 independent microservices (User, Author, Blog) using Node.js and TypeScript, operating across PostgreSQL and MongoDB databases.</li>
-                <li>Designed event-driven cache invalidation patterns via RabbitMQ messages and Redis cache-aside reads to reduce repeated heavy database hits.</li>
-                <li>Integrated 3 AI-driven writing and text-polishing tools powered by Google Gemini AI and containerized all environments with Docker.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="project-tech-list">
-              <span class="project-tech-tag">Next.js</span>
-              <span class="project-tech-tag">Node.js</span>
-              <span class="project-tech-tag">RabbitMQ</span>
-              <span class="project-tech-tag">Redis</span>
-              <span class="project-tech-tag">PostgreSQL</span>
-              <span class="project-tech-tag">Docker</span>
-              <span class="project-tech-tag">Gemini AI</span>
-            </div>
-          </div>
-        </div>
+      <!-- 2-Column Responsive Project Grid -->
+      <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
-        <!-- Project 2: MealZeno -->
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-            </div>
-            <div class="project-links">
-              <!-- Github Link -->
-              <a href="https://github.com/urshashi09/MealZeno" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-              <!-- Live Link -->
-              <a href="https://mealzeno-1.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
+        <!-- ========================================================
+             PROJECT 01: HR Policy RAG Assistant (Priority 1)
+             ======================================================== -->
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="1">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-blue-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            ★ FEATURED 01 // AGENTIC RAG
           </div>
-          <div class="project-card-content">
-            <h3 class="project-title">MealZeno: AI Meal Planning</h3>
-            <div class="project-description">
-              <ul>
-                <li>Developed a full-stack planner encompassing recipe generation, schedules, interactive pantry manager, shopping lists, and custom user profiles.</li>
-                <li>Implemented dynamic AI fallback (Gemini 1.5 Pro to Groq Llama 3 70B) for 100% service uptime; enforced client rate limits at 5 requests/min.</li>
-                <li>Configured a normalized PostgreSQL database schema with Sequelize ORM that handles dietary constraints, allergies, and PDF shopping exports.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="project-tech-list">
-              <span class="project-tech-tag">React 19</span>
-              <span class="project-tech-tag">Node.js</span>
-              <span class="project-tech-tag">PostgreSQL</span>
-              <span class="project-tech-tag">Sequelize</span>
-              <span class="project-tech-tag">Gemini API</span>
-              <span class="project-tech-tag">Groq API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: Careerlens AI -->
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-            </div>
-            <div class="project-links">
-              <!-- Github Link -->
-              <a href="https://github.com/urshashi09/Careerlens-AI" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-              <!-- Live Link -->
-              <a href="https://careerlens-ai-frontend.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Live Demo Application">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-card-content">
-            <h3 class="project-title">Careerlens AI: Interview Prep</h3>
-            <div class="project-description">
-              <ul>
-                <li>Engineered an automated interview preparation app featuring PDF resume uploading, parsing (via pdf-parse), and secure JWT cookies.</li>
-                <li>Designed strict structured JSON schema outputs with Gemini models and validated schemas using Zod validation.</li>
-                <li>Created a MongoDB schema storing detailed AI performance scorecards, tailor-made Q&As, skill roadmaps, and historic records per user.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="project-tech-list">
-              <span class="project-tech-tag">React 19</span>
-              <span class="project-tech-tag">Node.js</span>
-              <span class="project-tech-tag">MongoDB</span>
-              <span class="project-tech-tag">Gemini API</span>
-              <span class="project-tech-tag">Zod</span>
-              <span class="project-tech-tag">pdf-parse</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4: Redis Leaderboard System -->
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-            </div>
-            <div class="project-links">
-              <!-- Github Link -->
-              <a href="https://github.com/urshashi09/redis-leaderboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-              <!-- Live Link Not Available (Backend Only) -->
-            </div>
-          </div>
-          <div class="project-card-content">
-            <h3 class="project-title">Redis Leaderboard API</h3>
-            <div class="project-description">
-              <p>Built a high-performance ranking API with 9 REST endpoints using Redis database structures.</p>
-              <ul>
-                <li>Leveraged Redis sorted sets (ZSET) for O(log N) operations and HASH structures for player metadata.</li>
-                <li>Utilized pipelining to batch queries, achieving massive throughput under simulated load. Enforced rate-limiting at 30 req/min/IP.</li>
-                <li>Integrated TTL auto-expiry and containerized with Docker Compose.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="project-tech-list">
-              <span class="project-tech-tag">Node.js</span>
-              <span class="project-tech-tag">Express.js</span>
-              <span class="project-tech-tag">Redis ZSET</span>
-              <span class="project-tech-tag">Docker Compose</span>
-              <span class="project-tech-tag">Load Testing</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5: PhonePe Clone Backend API -->
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-            </div>
-            <div class="project-links">
-              <!-- Github Link -->
-              <a href="https://github.com/urshashi09/Phonepe-clone-backend" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-              <!-- Live Link Not Available (Backend Only) -->
-            </div>
-          </div>
-          <div class="project-card-content">
-            <h3 class="project-title">PhonePe Clone Backend API</h3>
-            <div class="project-description">
-              <p>Built a fintech-style wallet backend with authentication, wallet operations, secure transfers, bill payments, and transaction history.</p>
-              <ul>
-                <li>Implemented JWT-based signup and login flows with bcrypt-secured password and MPIN hashing for protected wallet actions.</li>
-                <li>Designed wallet APIs for deposits, phone-number money transfers, bill payments, balance checks, and incoming/outgoing transaction ledgers.</li>
-                <li>Added interactive Swagger documentation for testing authenticated endpoints and exploring the complete REST API surface.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card-footer">
-            <div class="project-tech-list">
-              <span class="project-tech-tag">Node.js</span>
-              <span class="project-tech-tag">Express.js</span>
-              <span class="project-tech-tag">MongoDB</span>
-              <span class="project-tech-tag">Mongoose</span>
-              <span class="project-tech-tag">JWT</span>
-              <span class="project-tech-tag">Bcrypt</span>
-              <span class="project-tech-tag">Swagger</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Achievements</h2>
-      
-      <div class="achievements-grid">
-        
-        <!-- Achievement 1 -->
-        <div class="achievement-card reveal">
-          <div class="achievement-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm-2 4h4m-4 4h4m-4 4h4" />
-            </svg>
-          </div>
-          <h3 class="achievement-title">Finalist</h3>
-          <span class="achievement-org">Smart India Hackathon 2023</span>
-          <p class="achievement-desc">
-            Selected as a national finalist for designing and presenting an innovative project solution addressing critical socio-economic problems in India's premier nationwide hackathon.
-          </p>
-          <a href="certificates/sih.pdf" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Smart India Hackathon certificate PDF">
-            <img src="certificates/sihimage.jpeg" alt="Smart India Hackathon 2023 certificate preview">
-          </a>
-        </div>
-
-        <!-- Achievement 2 -->
-        <div class="achievement-card reveal">
-          <div class="achievement-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-          </div>
-          <h3 class="achievement-title">2nd Place Winner</h3>
-          <span class="achievement-org">Plot2Deploy Hackathon 2024</span>
-          <p class="achievement-desc">
-            Awarded second place in a highly competitive, time-constrained hackathon organized by Google Developer Student Clubs (GDSC), focusing on clean code deployment and design.
-          </p>
-          <a href="certificates/1717259423582.jpg" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Plot2Deploy certificate image">
-            <img src="certificates/1717259423582.jpg" alt="Plot2Deploy Hackathon 2024 certificate preview">
-          </a>
-        </div>
-
-        <!-- Achievement 3 -->
-        <div class="achievement-card reveal">
-          <div class="achievement-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
-            </svg>
-          </div>
-          <h3 class="achievement-title">5th Place Winner</h3>
-          <span class="achievement-org">Hack Horizon 2.0</span>
-          <p class="achievement-desc">
-            Earned 5th place among numerous student teams globally in Hack Horizon 2.0, hosted by Arka Jain University, showing strong execution under intense pressure.
-          </p>
-          <a href="certificates/hackhorizon.jpeg" class="achievement-certificate-preview" target="_blank" rel="noopener noreferrer" aria-label="Open Hack Horizon certificate image">
-            <img src="certificates/hackhorizon.jpeg" alt="Hack Horizon 2.0 certificate preview">
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Get In Touch</h2>
-      
-      <div class="contact-layout">
-        
-        <!-- Info Column -->
-        <div class="contact-info reveal">
-          <p class="contact-text">
-            I'm currently seeking internships and full-time junior developer positions! If you have a question, want to collaborate on an open-source project, or just want to chat about systems engineering, don't hesitate to reach out.
-          </p>
-          
-          <div class="contact-cards-container">
-            <!-- Email -->
-            <a href="mailto:urshashimaj@gmail.com" class="contact-detail-card">
-              <div class="contact-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+          <!-- Folder Body Container -->
+          <div class="bg-zinc-950 text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
+            <div class="space-y-3.5">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
+                <span class="font-pixel text-[10px] text-blue-400 uppercase tracking-widest">ENTERPRISE-STYLE </span>
               </div>
-              <div class="contact-card-details">
-                <span class="contact-card-label">Email</span>
-                <span class="contact-card-value">urshashimaj@gmail.com</span>
+              <h4 class="text-2xl font-extrabold tracking-tight text-white">
+                HR Policy RAG Assistant
+              </h4>
+              <ul class="text-xs text-zinc-300 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Built an enterprise-style HR Policy Assistant using agentic RAG, LangChain tool calling, Jina embeddings, and Qdrant retrieval with a FAISS fallback.</li>
+                <li>Added input/output guardrails to detect and block prompt-injection and jailbreak attempts, with Portkey-based model routing, caching and fallback strategies.</li>
+                <li>Integrated LangSmith tracing, OpenEvals benchmark evaluation, structured logging, Docker containerization, and AWS deployment through GitHub Actions CI/CD.</li>
+              </ul>
+
+              <!-- Architecture Badge -->
+              <div class="p-2.5 rounded bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-300">
+                <span class="text-blue-400 font-pixel text-[10px]">Pipeline:</span> Query → Tool Calling → Jina-v2 → Qdrant/FAISS Fallback → Portkey Gateway
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Python</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangChain</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">RAG</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Qdrant</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">FAISS</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Jina</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Portkey</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangSmith</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">OpenEvals</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Docker</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">AWS</span>
+                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">CI/CD</span>
+              </div>
+            </div>
+
+            <!-- Action Link Button -->
+            <div class="pt-4 mt-3 border-t border-zinc-800">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400 text-slate-950 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/HR-Policy-RAG-assistant" rel="noopener noreferrer" target="_blank">
+                <span>VIEW GITHUB REPO ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 02: AI Deep Research Agent (Priority 2)
+             ======================================================== -->
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="2">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-amber-400 text-slate-950 font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            ★ FEATURED 02 // AUTONOMOUS AGENTS
+          </div>
+          <!-- Folder Body Container -->
+          <div class="bg-amber-400 text-slate-950 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
+            <div class="space-y-3.5">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+                <span class="font-pixel text-[10px] text-slate-900 uppercase tracking-widest font-bold">MULTI-STEP WORKFLOW</span>
+              </div>
+              <h4 class="text-2xl font-extrabold tracking-tight text-slate-950">
+                AI Deep Research Agent
+              </h4>
+              <ul class="text-xs text-slate-900 space-y-1.5 list-disc list-inside font-sans font-medium leading-relaxed">
+                <li>Built an agentic research workflow using LangChain and Mistral for query decomposition, web search, and multi-source research.</li>
+                <li>Integrated Tavily for web discovery and parallel source retrieval.</li>
+                <li>Added an automated critique-and-revision loop for report generation and exposed the workflow through a Streamlit interface.</li>
+              </ul>
+
+              <!-- Architecture Badge -->
+              <div class="p-2.5 rounded bg-amber-300/80 border border-slate-950 text-[11px] font-mono text-slate-900 font-semibold">
+                <span class="font-pixel text-[10px]">State Graph:</span> Query Decompose → Tavily Scrape → Mistral Synthesis → Self-Critique Loop
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Python</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">LangChain</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Mistral</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tavily</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Agentic AI</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tool Calling</span>
+                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Streamlit</span>
+              </div>
+            </div>
+
+            <!-- Action Link Button -->
+            <div class="pt-4 mt-3 border-t border-slate-950/20">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/AI-Research-Agent" rel="noopener noreferrer" target="_blank">
+                <span>VIEW GITHUB REPO ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 03: Microservice Blog App (Priority 3, Featured 03, Distinct Forest Emerald Color)
+             ======================================================== -->
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="3">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-emerald-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            ★ FEATURED 03 // DISTRIBUTED SYSTEMS
+          </div>
+          <!-- Folder Body Container (Distinct Rich Emerald Color, not Black or Yellow) -->
+          <div class="bg-[#064e3b] text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-emerald-300 uppercase tracking-widest font-bold">EVENT-DRIVEN ARCHITECTURE</span>
+                <span class="font-pixel text-[10px] bg-emerald-950/80 border border-emerald-400/50 px-2 py-0.5 rounded text-emerald-200">RABBITMQ + REDIS</span>
+              </div>
+              <h4 class="text-2xl font-extrabold tracking-tight text-white">
+                Microservice Blog App
+              </h4>
+              <ul class="text-xs text-emerald-100 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Separated User, Author, and Blog services into independent Node.js and TypeScript REST APIs backed by PostgreSQL and MongoDB.</li>
+                <li>Connected services through RabbitMQ for asynchronous events and implemented Redis cache-aside reads with cache invalidation.</li>
+                <li>Containerized services with Docker and integrated Gemini-powered writing tools.</li>
+              </ul>
+
+              <!-- Architecture Badge -->
+              <div class="p-2.5 rounded bg-emerald-950/80 border border-emerald-600/40 text-[11px] font-mono text-emerald-200">
+                <span class="font-pixel text-[10px] text-emerald-400">Microservices:</span> User (Auth) ↔ Author ↔ Blog | RabbitMQ Event Broker | Redis Cache
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Node.js</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">TypeScript</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">REST APIs</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">PostgreSQL</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">MongoDB</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Redis</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">RabbitMQ</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Docker</span>
+                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Gemini</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-emerald-800 flex items-center justify-between gap-3">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-900 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/Microservice-Blog-App" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-400 text-slate-950 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-emerald-300 hover:translate-x-0.5 transition-all font-bold" href="https://blog-app-frontend-qmz3.onrender.com" rel="noopener noreferrer" target="_blank">
+                <span>Live Demo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 04: CareerLens AI: Interview Prep (Priority 4)
+             ======================================================== -->
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="4">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-purple-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            PROJECT 04 // AI INTERVIEW PREP
+          </div>
+          <!-- Folder Body Container -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+            <!-- Washi tape at corner -->
+            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-purple -rotate-2"></div>
+
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-purple-700 uppercase tracking-widest font-bold">FULLSTACK GENAI APP</span>
+                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">REACT 19 + GEMINI</span>
+              </div>
+              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+                CareerLens AI: Interview Prep
+              </h4>
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Built a full-stack interview-preparation platform using React, Node.js/Express, and MongoDB for resume parsing and job-description matching.</li>
+                <li>Integrated Gemini for interview preparation and skill-gap analysis, with JWT-secured account flows.</li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">React 19</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">MongoDB</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Gemini</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">pdf-parse</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Zod</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 transition-colors font-bold" href="https://github.com/urshashi09/Careerlens-AI" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-900 border border-purple-400 font-pixel text-xs rounded shadow-brutal-sm hover:bg-purple-200 transition-colors font-bold" href="https://careerlens-ai-frontend.onrender.com" rel="noopener noreferrer" target="_blank">
+                <span>Live Demo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 05: PhonePe Clone Backend API (Priority 5)
+             ======================================================== -->
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="5">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-rose-500 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            PROJECT 05 // FINTECH BACKEND
+          </div>
+          <!-- Folder Body Container -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+            <!-- Washi tape at corner -->
+            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-pink rotate-3"></div>
+
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-rose-600 uppercase tracking-widest font-bold">SECURE REST API</span>
+                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">SWAGGER / OPENAPI</span>
+              </div>
+              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+                PhonePe Clone Backend API
+              </h4>
+              <p class="text-xs text-slate-600 font-sans">Built a wallet REST API for authentication, transfers, bill payments, and transaction history.</p>
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Secured signup and login with JWT and bcrypt-protected passwords and MPINs.</li>
+                <li>Documented authenticated endpoints with Swagger.</li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">MongoDB</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Mongoose</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Bcrypt</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Swagger</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-slate-100">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 transition-colors font-bold" href="https://github.com/urshashi09/Phonepe-clone-backend" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 06: MealZeno: AI Culinary Assistant (Priority 6)
+             ======================================================== -->
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="6">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-teal-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            PROJECT 06 // GENAI CULINARY APP
+          </div>
+          <!-- Folder Body Container -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+            <!-- Washi tape at corner -->
+            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-blue -rotate-2"></div>
+
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-teal-700 uppercase tracking-widest font-bold">DUAL-MODEL AI RECIPES</span>
+                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">GEMINI + GROQ LLAMA 3</span>
+              </div>
+              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+                MealZeno: AI Culinary Assistant
+              </h4>
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Built a full-stack smart kitchen assistant that transforms pantry inventory into personalized recipes with allergy protection.</li>
+                <li>Implemented model fallback from Google Gemini to Groq (Llama 3) with structured JSON responses for recipe generation.</li>
+                <li>Developed a Node.js and Express REST backend backed by PostgreSQL (Sequelize ORM), JWT authentication, API rate limiting, and weekly meal planning.</li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">React 18</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">PostgreSQL</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Sequelize</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Google Gemini</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Groq (Llama 3)</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Rate Limiting</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 transition-colors font-bold" href="https://github.com/urshashi09/MealZeno" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-100 text-teal-900 border border-teal-400 font-pixel text-xs rounded shadow-brutal-sm hover:bg-teal-200 transition-colors font-bold" href="https://mealzeno-1.onrender.com/" rel="noopener noreferrer" target="_blank">
+                <span>Live Demo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 07: Redis Leaderboard API (Priority 7, White Box Just Like Others)
+             ======================================================== -->
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="7">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-orange-500 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            PROJECT 07 // IN-MEMORY CACHE
+          </div>
+          <!-- Folder Body Container (White Box Just Like Others) -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+            <!-- Washi tape at corner -->
+            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-yellow rotate-3"></div>
+
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-amber-600 uppercase tracking-widest font-bold">HIGH-THROUGHPUT API</span>
+                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded text-slate-700">REDIS ZSET</span>
+              </div>
+              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+                Redis Leaderboard API
+              </h4>
+              <p class="text-xs text-slate-600 font-sans">Built a Redis-backed leaderboard API with 9 REST endpoints.</p>
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Used sorted sets for rankings and hashes for player metadata, with pipelined queries and TTL expiry.</li>
+                <li>Containerized the service with Docker Compose and tested it under simulated load.</li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Redis ZSET</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Docker Compose</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Load Testing</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-slate-100">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 transition-colors font-bold" href="https://github.com/urshashi09/redis-leaderboard" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             PROJECT 08: AI Object Detector with Audio Narration (Priority 8)
+             ======================================================== -->
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="8">
+          <!-- Folder Tab -->
+          <div class="folder-tab-badge inline-block self-start bg-indigo-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+            PROJECT 08 // COMPUTER VISION
+          </div>
+          <!-- Folder Body Container -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+            <!-- Washi tape at corner -->
+            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-purple -rotate-3"></div>
+
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="font-pixel text-[10px] text-indigo-700 uppercase tracking-widest font-bold">VISION &amp; AUDIO SYNTHESIS</span>
+                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">DETR + VITS</span>
+              </div>
+              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+                AI Object Detector with Audio Narration
+              </h4>
+              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                <li>Detects and localizes objects in uploaded images, displaying labeled bounding boxes and confidence scores.</li>
+                <li>Counts detected classes and turns the scene summary into spoken narration with a VITS text-to-speech model.</li>
+                <li>Offers a visual-only detector alongside the audio-enabled Gradio experience.</li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Python</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">DETR</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Transformers</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Gradio</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Pillow</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">VITS</span>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-4 mt-3 border-t border-slate-100">
+              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 transition-colors font-bold" href="https://github.com/urshashi09/ai-object-detector-audio" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Repo ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END: Stepped Folder Projects Section -->
+
+    <!-- BEGIN: Achievements Section (Clean, Focused, No Redundant Descriptions) -->
+    <section class="py-12 px-6 sm:px-14 reveal" id="achievements">
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <span class="font-hand text-xl text-slate-500">competitive honors</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Achievements</h3>
+        </div>
+        <span class="font-pixel text-xs bg-rose-200 text-rose-950 border border-slate-900 px-3 py-1 shadow-brutal-sm">
+          3x HACKATHONS
+        </span>
+      </div>
+
+      <!-- Awards Cards with Certificate Previews -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Award 1: Smart India Hackathon 2023 -->
+        <div class="scroll-box stagger-delay-1 bg-white border-2 border-slate-900 rounded-xl p-5 shadow-brutal relative transform hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-full bg-amber-400 border border-slate-900 flex items-center justify-center font-bold text-sm mb-3 shadow-brutal-sm">
+              🥇
+            </div>
+            <span class="text-[10px] font-pixel text-rose-600 block">NATIONAL STAGE</span>
+            <h4 class="text-base font-bold text-slate-900 mt-1">Smart India Hackathon 2023</h4>
+            <div class="mt-2">
+              <span class="stamp-badge stamp-pop inline-block px-2.5 py-0.5 rounded bg-amber-100 border border-amber-400 font-pixel text-xs text-amber-900 font-bold">
+                Finalist
+              </span>
+            </div>
+            
+            <!-- Certificate Preview -->
+            <a href="certificates/sih.pdf" target="_blank" rel="noopener noreferrer" class="block mt-4 border border-slate-300 rounded overflow-hidden shadow-xs hover:border-slate-900 transition-colors group relative" title="View SIH 2023 Certificate PDF">
+              <img src="certificates/sihimage.jpeg" alt="Smart India Hackathon 2023 certificate preview" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300"/>
+              <div class="absolute bottom-1 right-1 bg-black/75 text-white text-[9px] font-pixel px-1.5 py-0.5 rounded">
+                VIEW PDF ↗
               </div>
             </a>
+          </div>
 
-            <!-- Phone -->
-            <a href="tel:+917980996710" class="contact-detail-card">
-              <div class="contact-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div class="contact-card-details">
-                <span class="contact-card-label">Phone</span>
-                <span class="contact-card-value">+91 7980996710</span>
-              </div>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/urshashi-majumder-2239661b9" target="_blank" rel="noopener noreferrer" class="contact-detail-card">
-              <div class="contact-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-              </div>
-              <div class="contact-card-details">
-                <span class="contact-card-label">LinkedIn</span>
-                <span class="contact-card-value">linkedin.com/in/urshashi-majumder-2239661b9</span>
-              </div>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/urshashi09" target="_blank" rel="noopener noreferrer" class="contact-detail-card">
-              <div class="contact-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </div>
-              <div class="contact-card-details">
-                <span class="contact-card-label">GitHub</span>
-                <span class="contact-card-value">github.com/urshashi09</span>
-              </div>
-            </a>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+            <span>NATIONAL FINALIST</span>
+            <span class="font-pixel text-[9px] text-amber-700 font-bold">★ SIH 2023</span>
           </div>
         </div>
 
-        <!-- Form Column -->
-        <div class="contact-form-wrapper reveal reveal-delay-1">
-          <form id="contact-form" class="contact-form" novalidate>
-            
-            <div class="form-group">
-              <input type="text" id="name" class="form-input" placeholder=" " required>
-              <label for="name" class="form-label">Full Name</label>
+        <!-- Award 2: Plot2Deploy Hackathon 2024 -->
+        <div class="scroll-box stagger-delay-2 bg-white border-2 border-slate-900 rounded-xl p-5 shadow-brutal relative transform hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-full bg-emerald-400 border border-slate-900 flex items-center justify-center font-bold text-sm mb-3 shadow-brutal-sm">
+              🥈
             </div>
-            
-            <div class="form-group">
-              <input type="email" id="email" class="form-input" placeholder=" " required>
-              <label for="email" class="form-label">Email Address</label>
+            <span class="text-[10px] font-pixel text-emerald-700 block">GDSC ORGANIZED</span>
+            <h4 class="text-base font-bold text-slate-900 mt-1">Plot2Deploy Hackathon 2024</h4>
+            <div class="mt-2">
+              <span class="stamp-badge stamp-pop inline-block px-2.5 py-0.5 rounded bg-emerald-100 border border-emerald-400 font-pixel text-xs text-emerald-900 font-bold">
+                2nd Place Winner
+              </span>
             </div>
-            
-            <div class="form-group">
-              <input type="text" id="subject" class="form-input" placeholder=" " required>
-              <label for="subject" class="form-label">Subject</label>
+
+            <!-- Certificate Preview -->
+            <a href="certificates/1717259423582.jpg" target="_blank" rel="noopener noreferrer" class="block mt-4 border border-slate-300 rounded overflow-hidden shadow-xs hover:border-slate-900 transition-colors group relative" title="View Plot2Deploy Certificate Image">
+              <img src="certificates/1717259423582.jpg" alt="Plot2Deploy Hackathon 2024 certificate preview" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300"/>
+              <div class="absolute bottom-1 right-1 bg-black/75 text-white text-[9px] font-pixel px-1.5 py-0.5 rounded">
+                VIEW CERT ↗
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+            <span>2ND PLACE</span>
+            <span class="font-pixel text-[9px] text-emerald-700 font-bold">★ GDSC 2024</span>
+          </div>
+        </div>
+
+        <!-- Award 3: Hack Horizon 2.0 (2026) -->
+        <div class="scroll-box stagger-delay-3 bg-white border-2 border-slate-900 rounded-xl p-5 shadow-brutal relative transform hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-full bg-purple-400 border border-slate-900 flex items-center justify-center font-bold text-sm mb-3 shadow-brutal-sm">
+              🏆
             </div>
-            
-            <div class="form-group">
-              <textarea id="message" class="form-input" placeholder=" " required></textarea>
-              <label for="message" class="form-label">Your Message</label>
+            <span class="text-[10px] font-pixel text-purple-700 block">GLOBAL TEAMS</span>
+            <h4 class="text-base font-bold text-slate-900 mt-1">Hack Horizon 2.0 (2026)</h4>
+            <div class="mt-2">
+              <span class="stamp-badge stamp-pop inline-block px-2.5 py-0.5 rounded bg-purple-100 border border-purple-400 font-pixel text-xs text-purple-900 font-bold">
+                5th Place Winner
+              </span>
             </div>
-            
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Send Message
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-            </button>
-            
-          </form>
+
+            <!-- Certificate Preview -->
+            <a href="certificates/hackhorizon.jpeg" target="_blank" rel="noopener noreferrer" class="block mt-4 border border-slate-300 rounded overflow-hidden shadow-xs hover:border-slate-900 transition-colors group relative" title="View Hack Horizon Certificate Image">
+              <img src="certificates/hackhorizon.jpeg" alt="Hack Horizon 2.0 certificate preview" class="w-full h-36 object-cover object-top group-hover:scale-105 transition-transform duration-300"/>
+              <div class="absolute bottom-1 right-1 bg-black/75 text-white text-[9px] font-pixel px-1.5 py-0.5 rounded">
+                VIEW CERT ↗
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+            <span>5TH RANK</span>
+            <span class="font-pixel text-[9px] text-purple-700 font-bold">★ HORIZON 2.0</span>
+          </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- END: Achievements Section -->
+
+    <!-- BEGIN: Contact Section -->
+    <section class="py-12 px-6 sm:px-14 reveal" id="contact">
+      <div class="bg-white border-2 border-slate-900 rounded-2xl p-6 sm:p-10 shadow-brutal relative">
+        <!-- Corner Washi Tape decoration -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 w-32 h-7 washi-tape-blue -rotate-1 z-10"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left Column: Contact details & pitch -->
+          <div class="scroll-box from-left lg:col-span-5 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="font-hand text-2xl text-slate-600 block">let's build together</span>
+              <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Get In Touch</h3>
+              <p class="text-slate-600 text-sm leading-relaxed font-sans mt-2">
+                I am actively seeking <strong>Backend Engineering</strong>, <strong>Software Engineering</strong>, and <strong>AI / GenAI</strong> opportunities, including internships and early-career roles. I'm also open to technical collaborations and open-source projects.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-1">
+              <!-- Email Badge -->
+              <a class="flex items-center gap-3 p-3 bg-stone-50 border border-slate-300 rounded-lg hover:border-slate-900 hover:bg-amber-50 transition-colors group" href="mailto:urshashimaj@gmail.com">
+                <span class="w-8 h-8 rounded bg-rose-100 border border-rose-300 flex items-center justify-center text-sm">✉️</span>
+                <div>
+                  <div class="text-[10px] font-pixel text-slate-500">EMAIL</div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-rose-600 transition-colors">urshashimaj@gmail.com</div>
+                </div>
+              </a>
+
+              <!-- Phone Badge -->
+              <a class="flex items-center gap-3 p-3 bg-stone-50 border border-slate-300 rounded-lg hover:border-slate-900 hover:bg-amber-50 transition-colors group" href="tel:+917980996710">
+                <span class="w-8 h-8 rounded bg-emerald-100 border border-emerald-300 flex items-center justify-center text-sm">📞</span>
+                <div>
+                  <div class="text-[10px] font-pixel text-slate-500">PHONE</div>
+                  <div class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">+91 7980996710</div>
+                </div>
+              </a>
+
+              <!-- LinkedIn Badge -->
+              <a class="flex items-center gap-3 p-3 bg-stone-50 border border-slate-300 rounded-lg hover:border-slate-900 hover:bg-amber-50 transition-colors group" href="https://linkedin.com/in/urshashi-majumder-2239661b9" rel="noopener noreferrer" target="_blank">
+                <span class="w-8 h-8 rounded bg-blue-100 border border-blue-300 flex items-center justify-center text-sm font-pixel text-xs text-blue-700">in</span>
+                <div>
+                  <div class="text-[10px] font-pixel text-slate-500">LINKEDIN</div>
+                  <div class="text-xs font-bold text-slate-800 group-hover:text-blue-600 transition-colors">urshashi-majumder-2239661b9</div>
+                </div>
+              </a>
+
+              <!-- GitHub Badge -->
+              <a class="flex items-center gap-3 p-3 bg-stone-50 border border-slate-300 rounded-lg hover:border-slate-900 hover:bg-amber-50 transition-colors group" href="https://github.com/urshashi09" rel="noopener noreferrer" target="_blank">
+                <span class="w-8 h-8 rounded bg-amber-100 border border-amber-300 flex items-center justify-center text-sm font-pixel text-xs text-amber-800">gh</span>
+                <div>
+                  <div class="text-[10px] font-pixel text-slate-500">GITHUB</div>
+                  <div class="text-xs font-bold text-slate-800 group-hover:text-amber-700 transition-colors">github.com/urshashi09</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Notebook Memo Form (Full Height Matched) -->
+          <div class="scroll-box from-right stagger-delay-2 lg:col-span-7 bg-[#faf8f5] border-2 border-slate-900 rounded-xl p-6 sm:p-7 shadow-brutal-sm relative flex flex-col justify-between h-full">
+            <span class="font-hand text-lg text-slate-700 block mb-2 font-bold">send a memo 📝</span>
+            <form class="flex flex-col flex-grow justify-between gap-3.5" id="contact-form" novalidate>
+              <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
+              <div>
+                <label class="block font-pixel text-[10px] text-slate-700 mb-1" for="name">YOUR NAME *</label>
+                <input class="form-input w-full bg-white border border-slate-300 rounded px-3 py-2 text-xs font-sans focus:outline-none focus:ring-2 focus:ring-slate-900" id="name" placeholder="e.g. Alex Turing" required="" type="text"/>
+              </div>
+              <div>
+                <label class="block font-pixel text-[10px] text-slate-700 mb-1" for="email">EMAIL ADDRESS *</label>
+                <input class="form-input w-full bg-white border border-slate-300 rounded px-3 py-2 text-xs font-sans focus:outline-none focus:ring-2 focus:ring-slate-900" id="email" placeholder="alex@company.com" required="" type="email"/>
+              </div>
+              <div>
+                <label class="block font-pixel text-[10px] text-slate-700 mb-1" for="subject">SUBJECT / TOPIC *</label>
+                <input class="form-input w-full bg-white border border-slate-300 rounded px-3 py-2 text-xs font-sans focus:outline-none focus:ring-2 focus:ring-slate-900" id="subject" placeholder="Backend Engineer role / Project inquiry" required="" type="text"/>
+              </div>
+              <div class="flex-grow flex flex-col">
+                <label class="block font-pixel text-[10px] text-slate-700 mb-1" for="message">MESSAGE / SPECS *</label>
+                <textarea class="form-input w-full flex-grow min-h-[110px] bg-white border border-slate-300 rounded px-3 py-2 text-xs font-sans focus:outline-none focus:ring-2 focus:ring-slate-900" id="message" placeholder="Hey Urshashi, let's talk about our backend microservices and AI workflows..." required="" rows="4"></textarea>
+              </div>
+              <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center justify-center gap-2 mt-1" type="submit">
+                <span>SEND MESSAGE</span>
+                <span>✈️</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: Contact Section -->
+
+    <!-- BEGIN: Scrapbook Footer -->
+    <footer class="mt-8 pt-8 border-t-2 border-slate-900/10 px-6 sm:px-14 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+        <span>© 2026 Urshashi Majumder. Built with curiosity &amp; vanilla stack.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-slate-900 font-pixel text-[10px] transition-colors" href="#hero">↑ TOP</a>
+        <a class="hover:text-slate-900 transition-colors" href="https://github.com/urshashi09" rel="noopener noreferrer" target="_blank">GitHub</a>
+        <a class="hover:text-slate-900 transition-colors" href="https://linkedin.com/in/urshashi-majumder-2239661b9" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+    <!-- END: Scrapbook Footer -->
+
+  </div>
 
   <!-- Toast Notification System -->
   <div class="toast" id="toast">
@@ -707,29 +1209,7 @@
     <span class="toast-text" id="toast-text">Message sent successfully!</span>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <p class="footer-copy">
-        &copy; 2026 Urshashi Majumder. Built with <span class="footer-heart">&hearts;</span> &amp; vanilla stack.
-      </p>
-      <div class="footer-socials">
-        <a href="https://github.com/urshashi09" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub Profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
-        <a href="https://linkedin.com/in/urshashi-majumder-2239661b9" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
+  <!-- Portfolio Logic Script -->
   <script src="script.js"></script>
 </body>
 </html>
