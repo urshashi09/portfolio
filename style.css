@@ -392,10 +392,17 @@
   }
 }
 
-/* 13. Magnetic Buttons Transition */
-.magnetic-btn {
-  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.15s ease;
-  will-change: transform;
+/* 13. Tactile Button Normal Hover Transition */
+.btn-tactile {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-tactile:hover {
+  transform: translateY(-2px);
+}
+
+.btn-tactile:active {
+  transform: translateY(1px);
 }
 
 /* Toast Notification */

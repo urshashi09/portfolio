@@ -118,9 +118,9 @@
     <!-- END: Top Navigation Bar -->
 
     <!-- Quick Social Links (Below Navbar, towards the right) -->
-    <div class="flex items-center justify-center sm:justify-end gap-2.5 px-6 sm:px-12 pt-4 pb-1 relative z-20">
+    <div class="flex items-center justify-end gap-2 px-6 sm:px-12 pt-3 sm:pt-4 pb-1 relative z-20">
       <!-- LinkedIn Button -->
-      <a class="magnetic-btn inline-flex items-center gap-1.5 h-8 px-3 rounded-md bg-amber-400 border-2 border-slate-900 text-slate-950 font-pixel text-xs font-bold shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all" 
+      <a class="inline-flex items-center gap-1.5 h-7 sm:h-8 px-2.5 sm:px-3 rounded-md bg-amber-400 border-2 border-slate-900 text-slate-950 font-pixel text-[11px] sm:text-xs font-bold shadow-brutal-sm hover:-translate-y-0.5 hover:shadow-brutal hover:bg-amber-300 active:translate-y-0.5 active:shadow-none transition-all duration-200"
          href="https://linkedin.com/in/urshashi-majumder-2239661b9" 
          rel="noopener noreferrer" 
          target="_blank" 
@@ -132,7 +132,7 @@
       </a>
 
       <!-- GitHub Button -->
-      <a class="magnetic-btn inline-flex items-center gap-1.5 h-8 px-3 rounded-md bg-emerald-400 border-2 border-slate-900 text-slate-950 font-pixel text-xs font-bold shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all" 
+      <a class="inline-flex items-center gap-1.5 h-7 sm:h-8 px-2.5 sm:px-3 rounded-md bg-emerald-400 border-2 border-slate-900 text-slate-950 font-pixel text-[11px] sm:text-xs font-bold shadow-brutal-sm hover:-translate-y-0.5 hover:shadow-brutal hover:bg-emerald-300 active:translate-y-0.5 active:shadow-none transition-all duration-200"
          href="https://github.com/urshashi09" 
          rel="noopener noreferrer" 
          target="_blank" 
@@ -145,37 +145,15 @@
     </div>
 
     <!-- BEGIN: Hero Section -->
-    <section class="pt-8 pb-14 px-6 sm:px-16 relative overflow-hidden" id="hero">
+    <section class="pt-4 sm:pt-8 pb-14 px-6 sm:px-16 relative overflow-hidden" id="hero">
       <!-- Ambient Interactive Sparks / Dust Canvas -->
       <canvas id="particles-canvas" class="absolute inset-0 pointer-events-none w-full h-full z-0 opacity-60"></canvas>
 
       <div class="relative z-10">
-        <!-- Handwritten Top Doodles -->
-        <div class="flex justify-between items-center max-w-xl mx-auto text-center mb-4">
-          <span class="inline-block px-3 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-400 rounded-full font-pixel text-[10px] uppercase tracking-wider transform -rotate-2 hover:rotate-0 transition-transform">
-            APIs &amp; MICROSERVICES
-          </span>
-          <div class="relative">
-            <span class="font-hand text-2xl text-slate-600 block -rotate-3">my name is</span>
-            <svg class="w-16 h-3 text-slate-400 mx-auto -mt-1" fill="none" stroke="currentColor" viewBox="0 0 65 12">
-              <path class="doodle-path" d="M2 9C20 3 45 3 63 9" stroke-linecap="round" stroke-width="2"></path>
-            </svg>
-          </div>
-          <span class="inline-block px-3 py-0.5 bg-amber-100 text-amber-900 border border-amber-400 rounded-full font-pixel text-[10px] uppercase tracking-wider transform rotate-3 hover:rotate-0 transition-transform">
-            RAG &amp; AGENTIC SYSTEMS
-          </span>
-        </div>
-
         <!-- Retro Pixel Name Box -->
-        <div class="max-w-lg mx-auto relative my-6">
-          <!-- Top decorative doodle arrow & label with gentle float -->
-          <div class="absolute -top-7 left-2 sm:-left-6 flex items-center gap-1 animate-float-gentle">
-            <span class="font-hand text-lg text-amber-700 font-bold">that's me!</span>
-            <span class="text-amber-600 text-xl font-hand">↳</span>
-          </div>
-
+        <div class="max-w-lg mx-auto relative my-6 sm:my-8">
           <!-- Orange Hand-drawn Outer Frame -->
-          <div class="doodle-box-orange p-4 sm:p-6 bg-white/85 backdrop-blur-sm shadow-brutal text-center relative transition-transform hover:-translate-y-0.5">
+          <div class="doodle-box-orange p-5 sm:p-6 bg-white/85 backdrop-blur-sm shadow-brutal text-center relative transition-transform hover:-translate-y-0.5">
             <!-- Pixel Big Name -->
             <h1 class="font-pixel text-4xl sm:text-6xl tracking-tight text-slate-900 uppercase select-none">
               URSHASHI
@@ -187,30 +165,22 @@
               <span class="typewriter-cursor text-blue-600 font-bold ml-0.5">_</span>
             </div>
           </div>
-
-          <!-- Sticky Floating Note: Education & CGPA Tag with Floating Physics -->
-          <div class="absolute -bottom-4 -left-3 sm:-left-8 bg-amber-300 border-2 border-slate-900 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-hand font-bold text-slate-900 shadow-brutal-sm -rotate-6 animate-float-note cursor-default">
-            B.Tech CSE (AI) • <span class="stat-counter" data-target="8.7" data-decimal="1">8.7</span> CGPA 🎓
-          </div>
-          <!-- Sticky Floating Note: Location Tag with Reverse Floating Physics -->
-          <div class="absolute -bottom-4 -right-2 sm:-right-8 bg-emerald-200 border-2 border-slate-900 px-3 py-1 text-xs font-hand font-bold text-emerald-950 shadow-brutal-sm rotate-3 animate-float-note-reverse cursor-default">
-            Kolkata, India 🇮🇳
-          </div>
         </div>
 
         <!-- Status Indicator Pill -->
-        <div class="text-center mt-8 mb-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-white border border-slate-300 rounded-full text-xs font-pixel text-slate-700 shadow-sm hover:border-slate-800 transition-colors">
+        <div class="text-center mt-9 sm:mt-8 mb-6 sm:mb-8">
+          <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 bg-white border border-slate-300 rounded-full text-xs font-pixel text-slate-700 shadow-sm hover:border-slate-800 transition-colors">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
-            <span>OPEN TO BACKEND, SOFTWARE ENGINEERING &amp; AI/GENAI ROLES</span>
+            <span class="hidden sm:inline">OPEN TO BACKEND, SOFTWARE ENGINEERING &amp; AI/GENAI ROLES</span>
+            <span class="sm:hidden">OPEN TO BACKEND, SDE &amp; AI ROLES</span>
           </div>
         </div>
 
         <!-- Main Tagline with Icons -->
         <div class="text-center max-w-2xl mx-auto mt-4 mb-8">
           <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight">
-            I build reliable backend systems <span class="inline-block text-emerald-600 align-middle">🎯</span><br class="hidden sm:inline"/> 
-            &amp; intelligent AI applications. <span class="inline-block text-pink-500 align-middle">🌸</span>
+            I build reliable backend systems <br class="hidden sm:inline"/> 
+            &amp; intelligent AI applications. 
           </h2>
           <p class="mt-4 text-slate-600 text-sm sm:text-base font-normal max-w-xl mx-auto leading-relaxed">
             Final-year Computer Science (AI) student building backend systems, distributed services, and practical AI/agentic workflows.
@@ -218,13 +188,17 @@
         </div>
 
         <!-- Call to Action Buttons -->
-        <div class="flex items-center justify-center gap-4">
-          <a class="magnetic-btn inline-flex items-center gap-2 px-6 py-2.5 bg-slate-950 text-white font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:translate-x-1 active:translate-y-1 transition-all" href="#contact">
+        <div class="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+          <a class="inline-flex items-center gap-2 px-6 py-2.5 bg-slate-950 text-white font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal hover:-translate-y-0.5 hover:bg-slate-800 active:translate-y-0.5 active:shadow-brutal-sm transition-all duration-200 font-bold" href="#contact">
             <span class="w-2 h-2 bg-blue-400"></span>
             CONTACT ME
           </a>
-          <a class="magnetic-btn inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 font-pixel text-xs rounded border-2 border-slate-900 shadow-brutal-sm hover:bg-slate-100 hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all" href="#projects">
+          <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal-sm hover:-translate-y-0.5 hover:shadow-brutal hover:bg-slate-100 active:translate-y-0.5 active:shadow-none transition-all duration-200 font-bold" href="#projects">
             EXPLORE WORK ↗
+          </a>
+          <a class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-amber-400 text-slate-950 font-pixel text-xs rounded border-2 border-slate-950 shadow-brutal-sm hover:-translate-y-0.5 hover:shadow-brutal hover:bg-amber-300 active:translate-y-0.5 active:shadow-none transition-all duration-200 font-bold" href="certificates/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="w-2 h-2 bg-slate-950"></span>
+            RESUME ↗
           </a>
         </div>
 
@@ -567,214 +541,296 @@
     </section>
     <!-- END: Technical Toolbox Section -->
 
-    <!-- BEGIN: Stepped Folder Projects Section (2-Column Desktop Grid) -->
+    <!-- BEGIN: Projects Section (Curated Hierarchy: 3 Featured + 5 More Projects) -->
     <section class="py-12 px-4 sm:px-12 reveal" id="projects">
       <!-- Section Header -->
-      <div class="mb-8 text-center sm:text-left">
-        <span class="font-hand text-xl text-slate-500">hand-crafted &amp; deployed</span>
-        <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Projects</h3>
-        <p class="text-xs text-slate-500 font-pixel mt-1"><span class="stat-counter font-bold text-slate-800" data-target="8" data-decimal="0">8</span> ENGINEERING PROJECTS &bull; BACKEND, AI & DISTRIBUTED SYSTEMS</p>
+      <div class="mb-10 text-center sm:text-left">
+        <span class="font-hand text-xl text-slate-500">Built with Code  &amp; Curiosity</span>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Featured Projects</h3>
+        <p class="text-sm sm:text-base text-slate-600 font-sans mt-1">Selected projects showcasing backend engineering, AI systems, and full-stack development.</p>
+        
       </div>
 
-      <!-- 2-Column Responsive Project Grid -->
-      <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <!-- ========================================================
+           FEATURED PROJECTS (Top 3 Prominent Architecture Cards)
+           ======================================================== -->
+      <div class="featured-projects-list space-y-6 sm:space-y-8 mb-12">
 
         <!-- ========================================================
-             PROJECT 01: HR Policy RAG Assistant (Priority 1)
+             FEATURED 01: HR Policy RAG Assistant (Priority 1)
              ======================================================== -->
         <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="1">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-blue-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-blue-600 text-white font-pixel text-xs px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             ★ FEATURED 01 // AGENTIC RAG
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-zinc-950 text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
-            <div class="space-y-3.5">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
-                <span class="font-pixel text-[10px] text-blue-400 uppercase tracking-widest">ENTERPRISE-STYLE </span>
-              </div>
-              <h4 class="text-2xl font-extrabold tracking-tight text-white">
-                HR Policy RAG Assistant
-              </h4>
-              <ul class="text-xs text-zinc-300 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Built an enterprise-style HR Policy Assistant using agentic RAG, LangChain tool calling, Jina embeddings, and Qdrant retrieval with a FAISS fallback.</li>
-                <li>Added input/output guardrails to detect and block prompt-injection and jailbreak attempts, with Portkey-based model routing, caching and fallback strategies.</li>
-                <li>Integrated LangSmith tracing, OpenEvals benchmark evaluation, structured logging, Docker containerization, and AWS deployment through GitHub Actions CI/CD.</li>
-              </ul>
+          <div class="bg-zinc-950 text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-4 sm:p-5 lg:p-6 shadow-brutal relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
+              
+              <!-- Left Column: Details -->
+              <div class="lg:col-span-7 space-y-2.5 sm:space-y-3 flex flex-col justify-between h-full">
+                <div class="space-y-2 sm:space-y-2.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span class="font-pixel text-[10px] text-blue-400 uppercase tracking-widest">ENTERPRISE-STYLE</span>
+                  </div>
+                  <h4 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                    HR Policy RAG Assistant
+                  </h4>
+                  <ul class="text-xs sm:text-[13px] text-zinc-300 space-y-1 sm:space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                    <li>Built an enterprise-style HR Policy Assistant using agentic RAG, LangChain tool calling, Jina embeddings, and Qdrant retrieval with a FAISS fallback.</li>
+                    <li>Added input/output guardrails to detect and block prompt-injection and jailbreak attempts, with Portkey-based model routing, caching and fallback strategies.</li>
+                    <li>Integrated LangSmith tracing, OpenEvals benchmark evaluation, structured logging, Docker containerization, and AWS deployment through GitHub Actions CI/CD.</li>
+                  </ul>
 
-              <!-- Architecture Badge -->
-              <div class="p-2.5 rounded bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-300">
-                <span class="text-blue-400 font-pixel text-[10px]">Pipeline:</span> Query → Tool Calling → Jina-v2 → Qdrant/FAISS Fallback → Portkey Gateway
+                  <!-- Architecture Badge -->
+                  <div class="p-2 rounded bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-300">
+                    <span class="text-blue-400 font-pixel text-[10px]">Pipeline:</span> Query → Tool Calling → Jina-v2 → Qdrant/FAISS Fallback → Portkey Gateway
+                  </div>
+
+                  <!-- Tech Badges -->
+                  <div class="flex flex-wrap gap-1 sm:gap-1.5 pt-0.5">
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Python</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangChain</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">RAG</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Qdrant</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">FAISS</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Jina</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Portkey</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangSmith</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">OpenEvals</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Docker</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">AWS</span>
+                    <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">CI/CD</span>
+                  </div>
+                </div>
+
+                <!-- Action Link Button -->
+                <div class="pt-2.5 mt-2 border-t border-zinc-800">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400 text-slate-950 font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/HR-Policy-RAG-assistant" rel="noopener noreferrer" target="_blank">
+                    <span>VIEW GITHUB REPO ↗</span>
+                  </a>
+                </div>
               </div>
 
-              <!-- Tech Badges -->
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Python</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangChain</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">RAG</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Qdrant</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">FAISS</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Jina</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Portkey</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">LangSmith</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">OpenEvals</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">Docker</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">AWS</span>
-                <span class="px-2 py-0.5 bg-zinc-800 text-zinc-300 text-[11px] rounded font-mono border border-zinc-700">CI/CD</span>
+              <!-- Right Column: Architecture Diagram -->
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <div class="flex items-center justify-between text-xs font-mono mb-1.5 text-zinc-400">
+                  <span class="font-pixel text-[11px] text-blue-400 tracking-wider">SYSTEM ARCHITECTURE</span>
+                  <span class="text-[10px] text-zinc-400">Click to enlarge ↗</span>
+                </div>
+                <a href="certificates/hr_arch.jpg" target="_blank" rel="noopener noreferrer" class="group/arch block relative rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900 shadow-sm hover:border-blue-400 transition-all">
+                  <img src="certificates/hr_arch.jpg" alt="HR Policy RAG Assistant Architecture Diagram" class="w-full h-auto max-h-48 sm:max-h-52 lg:max-h-56 object-contain mx-auto p-1 rounded transition-transform duration-300 group-hover/arch:scale-[1.02]" loading="lazy">
+                  <div class="absolute bottom-2 right-2 bg-zinc-950/85 backdrop-blur-sm text-zinc-300 border border-zinc-700 px-2 py-0.5 rounded text-[10px] font-pixel flex items-center gap-1 opacity-90 group-hover/arch:opacity-100">
+                    <span>Open Full Diagram ↗</span>
+                  </div>
+                </a>
               </div>
-            </div>
 
-            <!-- Action Link Button -->
-            <div class="pt-4 mt-3 border-t border-zinc-800">
-              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400 text-slate-950 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/HR-Policy-RAG-assistant" rel="noopener noreferrer" target="_blank">
-                <span>VIEW GITHUB REPO ↗</span>
-              </a>
             </div>
           </div>
         </div>
 
         <!-- ========================================================
-             PROJECT 02: AI Deep Research Agent (Priority 2)
+             FEATURED 02: AI Deep Research Agent (Priority 2)
              ======================================================== -->
         <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="2">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-amber-400 text-slate-950 font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-amber-400 text-slate-950 font-pixel text-xs px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             ★ FEATURED 02 // AUTONOMOUS AGENTS
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-amber-400 text-slate-950 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
-            <div class="space-y-3.5">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
-                <span class="font-pixel text-[10px] text-slate-900 uppercase tracking-widest font-bold">MULTI-STEP WORKFLOW</span>
-              </div>
-              <h4 class="text-2xl font-extrabold tracking-tight text-slate-950">
-                AI Deep Research Agent
-              </h4>
-              <ul class="text-xs text-slate-900 space-y-1.5 list-disc list-inside font-sans font-medium leading-relaxed">
-                <li>Built an agentic research workflow using LangChain and Mistral for query decomposition, web search, and multi-source research.</li>
-                <li>Integrated Tavily for web discovery and parallel source retrieval.</li>
-                <li>Added an automated critique-and-revision loop for report generation and exposed the workflow through a Streamlit interface.</li>
-              </ul>
+          <div class="bg-amber-400 text-slate-950 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-4 sm:p-5 lg:p-6 shadow-brutal relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
 
-              <!-- Architecture Badge -->
-              <div class="p-2.5 rounded bg-amber-300/80 border border-slate-950 text-[11px] font-mono text-slate-900 font-semibold">
-                <span class="font-pixel text-[10px]">State Graph:</span> Query Decompose → Tavily Scrape → Mistral Synthesis → Self-Critique Loop
+              <!-- Left Column: Details -->
+              <div class="lg:col-span-7 space-y-2.5 sm:space-y-3 flex flex-col justify-between h-full">
+                <div class="space-y-2 sm:space-y-2.5">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
+                    <span class="font-pixel text-[10px] text-slate-900 uppercase tracking-widest font-bold">MULTI-STEP WORKFLOW</span>
+                  </div>
+                  <h4 class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-950">
+                    AI Deep Research Agent
+                  </h4>
+                  <ul class="text-xs sm:text-[13px] text-slate-900 space-y-1 sm:space-y-1.5 list-disc list-inside font-sans font-medium leading-relaxed">
+                    <li>Built an agentic research workflow using LangChain and Mistral for query decomposition, web search, and multi-source research.</li>
+                    <li>Integrated Tavily for web discovery and parallel source retrieval.</li>
+                    <li>Added an automated critique-and-revision loop for report generation and exposed the workflow through a Streamlit interface.</li>
+                  </ul>
+
+                  <!-- Architecture Badge -->
+                  <div class="p-2 rounded bg-amber-300/80 border border-slate-950 text-[11px] font-mono text-slate-900 font-semibold">
+                    <span class="font-pixel text-[10px]">State Graph:</span> Query Decompose → Tavily Scrape → Mistral Synthesis → Self-Critique Loop
+                  </div>
+
+                  <!-- Tech Badges -->
+                  <div class="flex flex-wrap gap-1 sm:gap-1.5 pt-0.5">
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Python</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">LangChain</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Mistral</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tavily</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Agentic AI</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tool Calling</span>
+                    <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Streamlit</span>
+                  </div>
+                </div>
+
+                <!-- Action Link Button -->
+                <div class="pt-2.5 mt-2 border-t border-slate-950/20">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/AI-Research-Agent" rel="noopener noreferrer" target="_blank">
+                    <span>VIEW GITHUB REPO ↗</span>
+                  </a>
+                </div>
               </div>
 
-              <!-- Tech Badges -->
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Python</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">LangChain</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Mistral</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tavily</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Agentic AI</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Tool Calling</span>
-                <span class="px-2 py-0.5 bg-slate-950 text-amber-300 text-[11px] rounded font-mono">Streamlit</span>
+              <!-- Right Column: Architecture Diagram -->
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <div class="flex items-center justify-between text-xs font-mono mb-1.5 text-slate-900">
+                  <span class="font-pixel text-[11px] text-slate-900 tracking-wider">SYSTEM ARCHITECTURE</span>
+                  <span class="text-[10px] text-slate-800">Click to enlarge ↗</span>
+                </div>
+                <a href="certificates/ai research_arch.png" target="_blank" rel="noopener noreferrer" class="group/arch block relative rounded-lg overflow-hidden border-2 border-slate-950 bg-amber-300/60 shadow-sm hover:border-slate-900 transition-all">
+                  <img src="certificates/ai research_arch.png" alt="AI Deep Research Agent Architecture Diagram" class="w-full h-auto max-h-48 sm:max-h-52 lg:max-h-56 object-contain mx-auto p-1 rounded transition-transform duration-300 group-hover/arch:scale-[1.02]" loading="lazy">
+                  <div class="absolute bottom-2 right-2 bg-slate-950 text-amber-300 px-2 py-0.5 rounded text-[10px] font-pixel flex items-center gap-1 opacity-90 group-hover/arch:opacity-100">
+                    <span>Open Full Diagram ↗</span>
+                  </div>
+                </a>
               </div>
-            </div>
 
-            <!-- Action Link Button -->
-            <div class="pt-4 mt-3 border-t border-slate-950/20">
-              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 text-white font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-slate-800 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/AI-Research-Agent" rel="noopener noreferrer" target="_blank">
-                <span>VIEW GITHUB REPO ↗</span>
-              </a>
             </div>
           </div>
         </div>
 
         <!-- ========================================================
-             PROJECT 03: Microservice Blog App (Priority 3, Featured 03, Distinct Forest Emerald Color)
+             FEATURED 03: Microservice Blog App (Priority 3)
              ======================================================== -->
         <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="3">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-emerald-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-emerald-600 text-white font-pixel text-xs px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             ★ FEATURED 03 // DISTRIBUTED SYSTEMS
           </div>
-          <!-- Folder Body Container (Distinct Rich Emerald Color, not Black or Yellow) -->
-          <div class="bg-[#064e3b] text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow overflow-hidden">
-            <div class="space-y-3.5">
-              <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-emerald-300 uppercase tracking-widest font-bold">EVENT-DRIVEN ARCHITECTURE</span>
-                <span class="font-pixel text-[10px] bg-emerald-950/80 border border-emerald-400/50 px-2 py-0.5 rounded text-emerald-200">RABBITMQ + REDIS</span>
-              </div>
-              <h4 class="text-2xl font-extrabold tracking-tight text-white">
-                Microservice Blog App
-              </h4>
-              <ul class="text-xs text-emerald-100 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Separated User, Author, and Blog services into independent Node.js and TypeScript REST APIs backed by PostgreSQL and MongoDB.</li>
-                <li>Connected services through RabbitMQ for asynchronous events and implemented Redis cache-aside reads with cache invalidation.</li>
-                <li>Containerized services with Docker and integrated Gemini-powered writing tools.</li>
-              </ul>
+          <!-- Folder Body Container -->
+          <div class="bg-[#064e3b] text-white border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-4 sm:p-5 lg:p-6 shadow-brutal relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
 
-              <!-- Architecture Badge -->
-              <div class="p-2.5 rounded bg-emerald-950/80 border border-emerald-600/40 text-[11px] font-mono text-emerald-200">
-                <span class="font-pixel text-[10px] text-emerald-400">Microservices:</span> User (Auth) ↔ Author ↔ Blog | RabbitMQ Event Broker | Redis Cache
+              <!-- Left Column: Details -->
+              <div class="lg:col-span-7 space-y-2.5 sm:space-y-3 flex flex-col justify-between h-full">
+                <div class="space-y-2 sm:space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <span class="font-pixel text-[10px] text-emerald-300 uppercase tracking-widest font-bold">EVENT-DRIVEN ARCHITECTURE</span>
+                    <span class="font-pixel text-[10px] bg-emerald-950/80 border border-emerald-400/50 px-2 py-0.5 rounded text-emerald-200">RABBITMQ + REDIS</span>
+                  </div>
+                  <h4 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                    Microservice Blog App
+                  </h4>
+                  <ul class="text-xs sm:text-[13px] text-emerald-100 space-y-1 sm:space-y-1.5 list-disc list-inside font-sans leading-relaxed">
+                    <li>Separated User, Author, and Blog services into independent Node.js and TypeScript REST APIs backed by PostgreSQL and MongoDB.</li>
+                    <li>Connected services through RabbitMQ for asynchronous events and implemented Redis cache-aside reads with cache invalidation.</li>
+                    <li>Containerized services with Docker and integrated Gemini-powered writing tools.</li>
+                  </ul>
+
+                  <!-- Architecture Badge -->
+                  <div class="p-2 rounded bg-emerald-950/80 border border-emerald-600/40 text-[11px] font-mono text-emerald-200">
+                    <span class="font-pixel text-[10px] text-emerald-400">Microservices:</span> User (Auth) ↔ Author ↔ Blog | RabbitMQ Event Broker | Redis Cache
+                  </div>
+
+                  <!-- Tech Badges -->
+                  <div class="flex flex-wrap gap-1 sm:gap-1.5 pt-0.5">
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Node.js</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">TypeScript</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">REST APIs</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">PostgreSQL</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">MongoDB</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Redis</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">RabbitMQ</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Docker</span>
+                    <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Gemini</span>
+                  </div>
+                </div>
+
+                <!-- Action Links -->
+                <div class="pt-2.5 mt-2 border-t border-emerald-800 flex items-center justify-between gap-3">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-900 font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/Microservice-Blog-App" rel="noopener noreferrer" target="_blank">
+                    <span>GitHub Repo ↗</span>
+                  </a>
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-400 text-slate-950 font-pixel text-xs rounded border border-slate-950 shadow-brutal-sm hover:bg-emerald-300 hover:translate-x-0.5 transition-all font-bold" href="https://blog-app-frontend-qmz3.onrender.com" rel="noopener noreferrer" target="_blank">
+                    <span>Live Demo ↗</span>
+                  </a>
+                </div>
               </div>
 
-              <!-- Tech Badges -->
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Node.js</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">TypeScript</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">REST APIs</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">PostgreSQL</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">MongoDB</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Redis</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">RabbitMQ</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Docker</span>
-                <span class="px-2 py-0.5 bg-emerald-900/90 border border-emerald-500/50 text-emerald-100 text-[11px] rounded font-mono">Gemini</span>
+              <!-- Right Column: Architecture Diagram -->
+              <div class="lg:col-span-5 flex flex-col justify-center">
+                <div class="flex items-center justify-between text-xs font-mono mb-1.5 text-emerald-200">
+                  <span class="font-pixel text-[11px] text-emerald-400 tracking-wider">SYSTEM ARCHITECTURE</span>
+                  <span class="text-[10px] text-emerald-300">Click to enlarge ↗</span>
+                </div>
+                <a href="certificates/micro_arch.png" target="_blank" rel="noopener noreferrer" class="group/arch block relative rounded-lg overflow-hidden border border-emerald-600/60 bg-emerald-950/70 shadow-sm hover:border-emerald-400 transition-all">
+                  <img src="certificates/micro_arch.png" alt="Microservice Blog App Architecture Diagram" class="w-full h-auto max-h-48 sm:max-h-52 lg:max-h-56 object-contain mx-auto p-1 rounded transition-transform duration-300 group-hover/arch:scale-[1.02]" loading="lazy">
+                  <div class="absolute bottom-2 right-2 bg-slate-950/90 text-emerald-300 border border-emerald-600/50 px-2 py-0.5 rounded text-[10px] font-pixel flex items-center gap-1 opacity-90 group-hover/arch:opacity-100">
+                    <span>Open Full Diagram ↗</span>
+                  </div>
+                </a>
               </div>
-            </div>
 
-            <!-- Action Links -->
-            <div class="pt-4 mt-3 border-t border-emerald-800 flex items-center justify-between gap-3">
-              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-slate-900 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-amber-300 hover:translate-x-0.5 transition-all font-bold" href="https://github.com/urshashi09/Microservice-Blog-App" rel="noopener noreferrer" target="_blank">
-                <span>GitHub Repo ↗</span>
-              </a>
-              <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-400 text-slate-950 font-pixel text-xs rounded border border-slate-900 shadow-brutal-sm hover:bg-emerald-300 hover:translate-x-0.5 transition-all font-bold" href="https://blog-app-frontend-qmz3.onrender.com" rel="noopener noreferrer" target="_blank">
-                <span>Live Demo ↗</span>
-              </a>
             </div>
           </div>
         </div>
+
+      </div>
+
+      <!-- ========================================================
+           MORE PROJECTS SUBSECTION (Compact 2-Column Desktop Grid)
+           ======================================================== -->
+      <div class="pt-6 pb-6 flex items-center gap-4">
+        <div class="flex-grow border-t-2 border-dashed border-slate-300"></div>
+        <span class="font-hand text-base text-slate-400 px-2 bg-[#fbf9f4]">additional builds &amp; explorations</span>
+        <div class="flex-grow border-t-2 border-dashed border-slate-300"></div>
+      </div>
+
+      <!-- More Projects Subsection Header -->
+      <div class="mb-8 text-center sm:text-left">
+        <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">More Projects</h4>
+        <p class="text-xs sm:text-sm text-slate-600 font-sans mt-1">More things I've built across backend, AI, APIs, and full-stack development.</p>
+      </div>
+
+      <!-- 2-Column Responsive Compact Grid -->
+      <div class="more-projects-grid grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- ========================================================
              PROJECT 04: CareerLens AI: Interview Prep (Priority 4)
              ======================================================== -->
-        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="4">
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="4">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-purple-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-purple-600 text-white font-pixel text-[11px] px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             PROJECT 04 // AI INTERVIEW PREP
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-5 shadow-brutal relative flex flex-col justify-between flex-grow">
             <!-- Washi tape at corner -->
-            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-purple -rotate-2"></div>
+            <div class="absolute -top-2.5 right-6 w-14 h-4 washi-tape-purple -rotate-2"></div>
 
-            <div class="space-y-3.5">
+            <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-purple-700 uppercase tracking-widest font-bold">FULLSTACK GENAI APP</span>
-                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">REACT 19 + GEMINI</span>
+                <span class="font-pixel text-[9px] text-purple-700 uppercase tracking-widest font-bold">FULLSTACK GENAI APP</span>
+                <span class="font-pixel text-[9px] bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded">REACT 19 + GEMINI</span>
               </div>
-              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+              <h5 class="text-xl font-bold tracking-tight text-slate-900">
                 CareerLens AI: Interview Prep
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Built a full-stack interview-preparation platform using React, Node.js/Express, and MongoDB for resume parsing and job-description matching.</li>
-                <li>Integrated Gemini for interview preparation and skill-gap analysis, with JWT-secured account flows.</li>
-              </ul>
+              </h5>
+              <p class="text-xs text-slate-600 font-sans leading-relaxed">
+                Full-stack interview-preparation platform using React, Node.js/Express, and MongoDB for resume parsing, job matching, and Gemini-powered skill analysis.
+              </p>
 
               <!-- Tech Badges -->
               <div class="flex flex-wrap gap-1.5 pt-1">
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">React 19</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">MongoDB</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Gemini</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">pdf-parse</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Zod</span>
               </div>
             </div>
 
@@ -793,38 +849,34 @@
         <!-- ========================================================
              PROJECT 05: PhonePe Clone Backend API (Priority 5)
              ======================================================== -->
-        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="5">
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="5">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-rose-500 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-rose-500 text-white font-pixel text-[11px] px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             PROJECT 05 // FINTECH BACKEND
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-5 shadow-brutal relative flex flex-col justify-between flex-grow">
             <!-- Washi tape at corner -->
-            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-pink rotate-3"></div>
+            <div class="absolute -top-2.5 right-6 w-14 h-4 washi-tape-pink rotate-3"></div>
 
-            <div class="space-y-3.5">
+            <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-rose-600 uppercase tracking-widest font-bold">SECURE REST API</span>
-                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">SWAGGER / OPENAPI</span>
+                <span class="font-pixel text-[9px] text-rose-600 uppercase tracking-widest font-bold">SECURE REST API</span>
+                <span class="font-pixel text-[9px] bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded">SWAGGER / OPENAPI</span>
               </div>
-              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+              <h5 class="text-xl font-bold tracking-tight text-slate-900">
                 PhonePe Clone Backend API
-              </h4>
-              <p class="text-xs text-slate-600 font-sans">Built a wallet REST API for authentication, transfers, bill payments, and transaction history.</p>
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Secured signup and login with JWT and bcrypt-protected passwords and MPINs.</li>
-                <li>Documented authenticated endpoints with Swagger.</li>
-              </ul>
+              </h5>
+              <p class="text-xs text-slate-600 font-sans leading-relaxed">
+                Wallet REST API for user authentication, wallet transfers, bill payments, and transaction history, secured with JWT and documented with Swagger.
+              </p>
 
               <!-- Tech Badges -->
               <div class="flex flex-wrap gap-1.5 pt-1">
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">MongoDB</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Mongoose</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Bcrypt</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Swagger</span>
               </div>
             </div>
@@ -841,41 +893,35 @@
         <!-- ========================================================
              PROJECT 06: MealZeno: AI Culinary Assistant (Priority 6)
              ======================================================== -->
-        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="6">
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="6">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-teal-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-teal-600 text-white font-pixel text-[11px] px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             PROJECT 06 // GENAI CULINARY APP
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-5 shadow-brutal relative flex flex-col justify-between flex-grow">
             <!-- Washi tape at corner -->
-            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-blue -rotate-2"></div>
+            <div class="absolute -top-2.5 right-6 w-14 h-4 washi-tape-blue -rotate-2"></div>
 
-            <div class="space-y-3.5">
+            <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-teal-700 uppercase tracking-widest font-bold">DUAL-MODEL AI RECIPES</span>
-                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">GEMINI + GROQ LLAMA 3</span>
+                <span class="font-pixel text-[9px] text-teal-700 uppercase tracking-widest font-bold">DUAL-MODEL AI RECIPES</span>
+                <span class="font-pixel text-[9px] bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded">GEMINI + GROQ</span>
               </div>
-              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+              <h5 class="text-xl font-bold tracking-tight text-slate-900">
                 MealZeno: AI Culinary Assistant
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Built a full-stack smart kitchen assistant that transforms pantry inventory into personalized recipes with allergy protection.</li>
-                <li>Implemented model fallback from Google Gemini to Groq (Llama 3) with structured JSON responses for recipe generation.</li>
-                <li>Developed a Node.js and Express REST backend backed by PostgreSQL (Sequelize ORM), JWT authentication, API rate limiting, and weekly meal planning.</li>
-              </ul>
+              </h5>
+              <p class="text-xs text-slate-600 font-sans leading-relaxed">
+                Smart kitchen assistant transforming pantry ingredients into personalized recipes with allergy protection, model fallback, and weekly meal planning.
+              </p>
 
               <!-- Tech Badges -->
               <div class="flex flex-wrap gap-1.5 pt-1">
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">React 18</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Node.js</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">PostgreSQL</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Sequelize</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Google Gemini</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Groq (Llama 3)</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">JWT</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Rate Limiting</span>
               </div>
             </div>
 
@@ -892,31 +938,29 @@
         </div>
 
         <!-- ========================================================
-             PROJECT 07: Redis Leaderboard API (Priority 7, White Box Just Like Others)
+             PROJECT 07: Redis Leaderboard API (Priority 7)
              ======================================================== -->
-        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="7">
+        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="7">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-orange-500 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-orange-500 text-white font-pixel text-[11px] px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             PROJECT 07 // IN-MEMORY CACHE
           </div>
-          <!-- Folder Body Container (White Box Just Like Others) -->
-          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+          <!-- Folder Body Container -->
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-5 shadow-brutal relative flex flex-col justify-between flex-grow">
             <!-- Washi tape at corner -->
-            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-yellow rotate-3"></div>
+            <div class="absolute -top-2.5 right-6 w-14 h-4 washi-tape-yellow rotate-3"></div>
 
-            <div class="space-y-3.5">
+            <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-amber-600 uppercase tracking-widest font-bold">HIGH-THROUGHPUT API</span>
-                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded text-slate-700">REDIS ZSET</span>
+                <span class="font-pixel text-[9px] text-amber-600 uppercase tracking-widest font-bold">HIGH-THROUGHPUT API</span>
+                <span class="font-pixel text-[9px] bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded text-slate-700">REDIS ZSET</span>
               </div>
-              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+              <h5 class="text-xl font-bold tracking-tight text-slate-900">
                 Redis Leaderboard API
-              </h4>
-              <p class="text-xs text-slate-600 font-sans">Built a Redis-backed leaderboard API with 9 REST endpoints.</p>
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Used sorted sets for rankings and hashes for player metadata, with pipelined queries and TTL expiry.</li>
-                <li>Containerized the service with Docker Compose and tested it under simulated load.</li>
-              </ul>
+              </h5>
+              <p class="text-xs text-slate-600 font-sans leading-relaxed">
+                High-throughput Redis-backed leaderboard API utilizing sorted sets for real-time ranking and hash maps for player metadata under simulated load.
+              </p>
 
               <!-- Tech Badges -->
               <div class="flex flex-wrap gap-1.5 pt-1">
@@ -924,7 +968,6 @@
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Express.js</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Redis ZSET</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Docker Compose</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Load Testing</span>
               </div>
             </div>
 
@@ -940,38 +983,35 @@
         <!-- ========================================================
              PROJECT 08: AI Object Detector with Audio Narration (Priority 8)
              ======================================================== -->
-        <div class="project-card scroll-box from-right stagger-delay-2 group flex flex-col" data-project-priority="8">
+        <div class="project-card scroll-box from-left group flex flex-col" data-project-priority="8">
           <!-- Folder Tab -->
-          <div class="folder-tab-badge inline-block self-start bg-indigo-600 text-white font-pixel text-xs px-5 py-2 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
+          <div class="folder-tab-badge inline-block self-start bg-indigo-600 text-white font-pixel text-[11px] px-4 py-1.5 rounded-t-lg border-t-2 border-l-2 border-r-2 border-slate-950 font-bold tracking-wider">
             PROJECT 08 // COMPUTER VISION
           </div>
           <!-- Folder Body Container -->
-          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-6 shadow-brutal relative flex flex-col justify-between flex-grow">
+          <div class="bg-white text-slate-900 border-2 border-slate-950 rounded-b-xl rounded-tr-xl p-5 shadow-brutal relative flex flex-col justify-between flex-grow">
             <!-- Washi tape at corner -->
-            <div class="absolute -top-2.5 right-6 w-16 h-5 washi-tape-purple -rotate-3"></div>
+            <div class="absolute -top-2.5 right-6 w-14 h-4 washi-tape-purple -rotate-3"></div>
 
-            <div class="space-y-3.5">
+            <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <span class="font-pixel text-[10px] text-indigo-700 uppercase tracking-widest font-bold">VISION &amp; AUDIO SYNTHESIS</span>
-                <span class="font-pixel text-[10px] bg-slate-100 border border-slate-300 px-2 py-0.5 rounded">DETR + VITS</span>
+                <span class="font-pixel text-[9px] text-indigo-700 uppercase tracking-widest font-bold">VISION &amp; AUDIO SYNTHESIS</span>
+                <span class="font-pixel text-[9px] bg-slate-100 border border-slate-300 px-1.5 py-0.5 rounded">DETR + VITS</span>
               </div>
-              <h4 class="text-2xl font-bold tracking-tight text-slate-900">
+              <h5 class="text-xl font-bold tracking-tight text-slate-900">
                 AI Object Detector with Audio Narration
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside font-sans leading-relaxed">
-                <li>Detects and localizes objects in uploaded images, displaying labeled bounding boxes and confidence scores.</li>
-                <li>Counts detected classes and turns the scene summary into spoken narration with a VITS text-to-speech model.</li>
-                <li>Offers a visual-only detector alongside the audio-enabled Gradio experience.</li>
-              </ul>
+              </h5>
+              <p class="text-xs text-slate-600 font-sans leading-relaxed">
+                Computer vision app that detects objects with DETR transformers and generates real-time spoken scene narrations using a VITS text-to-speech model.
+              </p>
 
               <!-- Tech Badges -->
               <div class="flex flex-wrap gap-1.5 pt-1">
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Python</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">DETR</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Transformers</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Gradio</span>
-                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Pillow</span>
                 <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">VITS</span>
+                <span class="px-2 py-0.5 bg-slate-100 border border-slate-300 text-slate-800 text-[11px] rounded font-mono">Gradio</span>
               </div>
             </div>
 
@@ -986,7 +1026,7 @@
 
       </div>
     </section>
-    <!-- END: Stepped Folder Projects Section -->
+    <!-- END: Projects Section -->
 
     <!-- BEGIN: Achievements Section (Clean, Focused, No Redundant Descriptions) -->
     <section class="py-12 px-6 sm:px-14 reveal" id="achievements">

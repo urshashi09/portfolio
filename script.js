@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     skillsGrid.replaceChildren(...skillCards);
   }
 
-  const projectGrid = document.querySelector('.projects-grid');
-  if (projectGrid) {
-    const projectCards = Array.from(projectGrid.querySelectorAll('.project-card'))
+  const projectGrids = document.querySelectorAll('.featured-projects-list, .more-projects-grid, .projects-grid');
+  projectGrids.forEach(grid => {
+    const projectCards = Array.from(grid.querySelectorAll('.project-card'))
       .sort((first, second) => Number(first.dataset.projectPriority) - Number(second.dataset.projectPriority));
-    projectGrid.replaceChildren(...projectCards);
-  }
+    if (projectCards.length > 0) {
+      grid.replaceChildren(...projectCards);
+    }
+  });
 
   // ==========================================
   // 1. Navigation & Header Scroll Behavior
@@ -560,23 +562,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 9. Magnetic Button Hover Physics
+  // 9. Standard Button Interactions
   // ==========================================
-  if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
-    const magneticBtns = document.querySelectorAll('.magnetic-btn');
-    magneticBtns.forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - (rect.left + rect.width / 2);
-        const y = e.clientY - (rect.top + rect.height / 2);
-        btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
-      });
-
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
-    });
-  }
+  // Replaced cursor-following magnetic physics with standard CSS hover transitions.
 
 
   // ==========================================
